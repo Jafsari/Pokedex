@@ -10,7 +10,7 @@ class ListDetail extends Component{
         }
     }
     componentWillReceiveProps(nextProps) {
-        if(nextProps !== undefined && nextProps.info.data) {  
+        if(nextProps.info.data) {  
             (this.setState({
                 data:true,
                 information:[nextProps.info.data]
