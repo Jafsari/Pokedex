@@ -2,10 +2,14 @@
     color:white;
 }
 
-.navbar-light .navbar-brand{
+#bg-light {
+    background-color: #e21010!important;
+}
+
+#bg-light .navbar-brand {
     color:white;
 }
 
-.navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover{
+#NavColor{
     color:white;
 }
