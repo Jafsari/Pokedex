@@ -18,12 +18,10 @@ class List extends Component (){
       }
       render(){
   return (
-    <div >
-        <ul>
+    <div className='content' >
             <ListDetail
             info = {this.state.data}
              />
-        </ul>
     </div>
   );
 }
