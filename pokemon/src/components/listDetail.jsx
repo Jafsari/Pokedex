@@ -5,7 +5,7 @@ const List = ({info}) =>{
 return (
     <div >
         <ul>
-            {info.moves.name}
+            
         </ul>
     </div>
   );
