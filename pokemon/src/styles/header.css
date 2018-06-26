@@ -1,0 +1,13 @@
+#jumbotron {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    background-color: #fff;
+    border-radius: .3rem;
+    margin: 0 auto;
+}
+
+.coffee{
+    -moz-transform:scale(0.9);
+    -webkit-transform:scale(0.9);
+    transform:scale(0.9);
+}
