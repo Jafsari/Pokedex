@@ -9,7 +9,9 @@ const Example = (props) => {
   return (
     <div >
       < Jumbotron id="jumbotron">
-        <p className="lead"><span className='coffee'><Icon icon={coffee} /></span>Pokedex.org</p>
+        <p className="lead"><span className='coffee'>
+        <Icon icon={coffee} />
+        </span>Pokedex.org</p>
         <hr className="my-2" />
       </Jumbotron>
       <div>
