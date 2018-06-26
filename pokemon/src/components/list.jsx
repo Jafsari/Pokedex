@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import ListDetail from './listDetail.jsx';
+import axios from 'axios'
 
-
-class List extends Component (){
+class List extends Component {
     constructor(props){
         super(props)
         this.state = {
@@ -11,20 +12,20 @@ class List extends Component (){
     componentDidMount() {
         axios.get('http://localhost:9000/api/pokemon').then((response) => {
             this.setState({data:response})
-          console.log(response)
         }).catch((error) => {
           console.log(error)
         })
       }
       render(){
+         console.log(this.state.data)
   return (
-    <div className='content' >
+    <ul className='content' >
             <ListDetail
             info = {this.state.data}
              />
-    </div>
+    </ul>
   );
 }
 };
 
-export default list;
+export default List;

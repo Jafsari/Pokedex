@@ -1,0 +1,11 @@
+#poke{
+    color:white;
+}
+
+.navbar-light .navbar-brand{
+    color:white;
+}
+
+.navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover{
+    color:white;
+}

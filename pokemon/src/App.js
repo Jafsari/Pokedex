@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Nav from './components/navbar.jsx'
 import Header from './components/Header.jsx'
+import List from './components/list.jsx'
 
 
 class App extends Component {
@@ -15,6 +16,9 @@ class App extends Component {
     <header>
       <Header />
     </header>
+    <main>
+      <List />
+    </main>
       </div>
     );
   }

@@ -19,17 +19,16 @@ export default class header extends React.Component {
   render() {
     return (
       <div>
-        <Navbar color="dark" light>
+        <Navbar color="light" light>
         <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-         
-        <NavbarBrand href="/" className="mr-auto">Pokedex</NavbarBrand>
+        <NavbarBrand href="/" className="mr-auto white poke">Pokedex</NavbarBrand>
           <Collapse isOpen={!this.state.collapsed} navbar>
             <Nav navbar>
               <NavItem>
-                <NavLink href="/components/">Components</NavLink>
+                <NavLink >Pokemon</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+                <NavLink >About</NavLink>
               </NavItem>
             </Nav>
           </Collapse>

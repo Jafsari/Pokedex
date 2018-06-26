@@ -4,6 +4,7 @@ import { Jumbotron, Button } from 'reactstrap';
 import Search from './search.jsx';
 import { Icon } from 'react-icons-kit';
 import {coffee} from 'react-icons-kit/ionicons/coffee';
+import Card from './card.jsx'
 
 const Example = (props) => {
   return (
@@ -11,7 +12,7 @@ const Example = (props) => {
       < Jumbotron id="jumbotron">
         <p className="lead"><span className='coffee'>
         <Icon icon={coffee} />
-        </span>Pokedex.org</p>
+        </span>Pokedex.net</p>
         <hr className="my-2" />
       </Jumbotron>
       <div>
