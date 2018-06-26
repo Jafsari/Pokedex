@@ -6,24 +6,19 @@ class ListDetail extends Component{
         super(props)
         this.state = {
             data: false,
-            information: ""
+            information: []
         }
     }
     componentWillReceiveProps(nextProps) {
         if(nextProps !== undefined && nextProps.info.data) {  
             (this.setState({
                 data:true,
-                information:nextProps.info.data
+                information:[nextProps.info.data]
             }));
         } 
     }
-    picture = () => {
-        {this.state.information.map((pokemon,index) => {
-            return <img src={pokemon.species.url} alt = '' />
-        })}
-    }
     render() {
-        console.log(this.state.information)
+        console.log(this.state.data)
         let info;
         if (!this.state.data){
             info = <div> </div>
@@ -31,13 +26,24 @@ class ListDetail extends Component{
         if (this.state.data){
            info = 
            <div>
-           
+                {this.state.information.map((pokemon,index) => {
+            return (
+                <div>
+                <div key={index}>
+                   {pokemon.species.name}
+                </div>
+                <div>
+                    {pokemon.order}
+                </div>
+                </div>
+            )
+        })}
           </div>
         }
 return (
-    <li >
-
-    </li>
+    <div >
+    {info}
+    </div>
   );
 }
 }

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import axios from 'axios'
 
-export default class Example extends React.Component {
+export default class Search extends Component {
     render() {
       return (
         <Form>

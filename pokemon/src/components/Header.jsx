@@ -6,13 +6,13 @@ import { Icon } from 'react-icons-kit';
 import {coffee} from 'react-icons-kit/ionicons/coffee';
 import Card from './card.jsx'
 
-const Example = (props) => {
+const Header = (props) => {
   return (
     <div >
       < Jumbotron id="jumbotron">
         <p className="lead"><span className='coffee'>
         <Icon icon={coffee} />
-        </span>Pokedex.net</p>
+        </span><span className="headerTitle">Pokedex.net </span></p>
         <hr className="my-2" />
       </Jumbotron>
       <div>
@@ -22,4 +22,4 @@ const Example = (props) => {
   );
 };
 
-export default Example;
+export default Header;

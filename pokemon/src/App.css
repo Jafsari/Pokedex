@@ -28,7 +28,6 @@
 }
 
 .wallpaper{
-  text-align: center;
     background-image: url(assets/wallpapers/pokemon-wall.jpg);
     height:100vh;
     background-size:cover;
