@@ -6,8 +6,9 @@ var P = new Pokedex();
 
 
 router.post('/', (req,res) => {
-  const pokemon = req.body.pokemon
-    P.getPokemonByName(pokemon) 
+  console.log(req.body.Pokemon)
+  const pokemon = req.body.Pokemon
+    P.getPokemonByName(`${pokemon}`) 
     .then(function(response) {
       return res.json(response);
     })

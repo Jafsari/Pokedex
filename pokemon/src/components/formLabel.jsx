@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
+import { compose } from 'redux';
 import axios from 'axios';
 
 const styles = theme => ({
@@ -39,16 +42,7 @@ class TextFields extends React.Component {
 
  handleRequest = (e) => {
      e.preventDefault();
-     let config ={
-         pokemon:this.state.Search
-     }
-    axios.post('http://localhost:9000/api/pokemon',config).then((response) => {
-        this.setState({data:true})
-        console.log(response)
-    }).catch((error) => {
-      console.log(error)
-    })
-    this.setState({Search:""})
+    this.props.search({Pokemon:this.state.Search})
   }
 
   render() {
@@ -70,9 +64,7 @@ class TextFields extends React.Component {
           type="text"
           id="Search"
           value={this.state.Search} 
-          
-
-        />
+           />
       </form>
     );
   }
@@ -82,4 +74,9 @@ TextFields.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(TextFields);
+export default compose(
+    withStyles(styles),
+    connect(null,actions)
+)
+(TextFields);
+
