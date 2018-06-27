@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
+import axios from 'axios';
 
 const styles = theme => ({
   container: {
@@ -21,18 +22,39 @@ const styles = theme => ({
 
 
 class TextFields extends React.Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            data:false,
+            Search:""
+        }
+    }
 
-  handleChange = name => event => {
-    this.setState({
-      [name]: event.target.value,
-    });
-  };
+    handleChange = (e) => {
+        this.setState({
+             [e.target.name]: e.target.value
+           });
+     }
+     
+
+ handleRequest = (e) => {
+     e.preventDefault();
+     let config ={
+         pokemon:this.state.Search
+     }
+    axios.post('http://localhost:9000/api/pokemon',config).then((response) => {
+        this.setState({data:true})
+        console.log(response)
+    }).catch((error) => {
+      console.log(error)
+    })
+    this.setState({Search:""})
+  }
 
   render() {
     const { classes } = this.props;
-
     return (
-      <form className={classes.container} noValidate autoComplete="off">
+      <form className={classes.container} noValidate autoComplete="off" onSubmit={this.handleRequest}>
         <TextField
           id="full-width"
           label="Search"
@@ -43,6 +65,13 @@ class TextFields extends React.Component {
           helperText="Trust us!"
           fullWidth
           margin="normal"
+          onChange={this.handleChange}
+          name="Search"
+          type="text"
+          id="Search"
+          value={this.state.Search} 
+          
+
         />
       </form>
     );

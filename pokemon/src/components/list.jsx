@@ -9,13 +9,6 @@ class List extends Component {
             data:""
         }
     }
-    componentDidMount() {
-        axios.get('http://localhost:9000/api/pokemon').then((response) => {
-            this.setState({data:response})
-        }).catch((error) => {
-          console.log(error)
-        })
-      }
       render(){
          console.log(this.state.data)
   return (

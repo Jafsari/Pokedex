@@ -5,10 +5,10 @@ var P = new Pokedex();
 
 
 
-router.get('/', (req,res) => {
-    P.getPokemonByName('eevee') // with Promise
+router.post('/', (req,res) => {
+  const pokemon = req.body.pokemon
+    P.getPokemonByName(pokemon) 
     .then(function(response) {
-      console.log(response);
       return res.json(response);
     })
     .catch(function(error) {
