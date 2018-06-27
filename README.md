@@ -1,3 +1,3 @@
 # Pokedex
 
-![screen shot 2018-06-26 at 3 44 43 am](https://user-images.githubusercontent.com/28635782/41906688-5cacef9c-78f3-11e8-9d89-79f5ac5633dc.png)
+![screen shot 2018-06-26 at 5 42 41 pm](https://user-images.githubusercontent.com/28635782/41946760-d501e1a8-7968-11e8-92ef-4048cd229c3e.png)
