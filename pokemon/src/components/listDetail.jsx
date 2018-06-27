@@ -18,10 +18,10 @@ class ListDetail extends Component{
         } 
     }
     render() {
- 
+        
 return (
     <div >
-
+        
     </div>
   );
 }

@@ -14,7 +14,7 @@ const Header = (props) => {
       < Jumbotron id="jumbotron">
         <p className="lead"><span className='coffee'>
         <Icon icon={coffee} />
-        </span><span className="headerTitle">Pokedex.net</span></p>
+        </span><span className="headerTitle">Pokedex</span></p>
         <hr className="my-2" />
       </Jumbotron>
       <div className='label'>
