@@ -2,5 +2,6 @@
     text-align: center;
     display:flex;
     justify-content:center;
+    animation:fade-in 1s linear;
   }
   
