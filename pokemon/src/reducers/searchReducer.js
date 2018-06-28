@@ -1,7 +1,8 @@
 import { SET_POKEMON, SET_POKEMON_LOADING } from '../actions/types'
 
 const DEFAULT_STATE = {
-    pokemon:false
+    pokemon:false,
+    data:false
   };
 
 export default (state = DEFAULT_STATE, action) => {
@@ -12,7 +13,7 @@ export default (state = DEFAULT_STATE, action) => {
       };
       case SET_POKEMON_LOADING:
       return{
-          pokemon:action.information
+          data:action.information
       }
 		default:
 		return state;

@@ -10,23 +10,12 @@ class ListDetail extends Component{
     constructor(props){
         super(props)
     }
-    renderPokemon = () =>{
-        var info;
-        if (this.props.pokemon.information === 'loading'){
-            info = <div> <Progress /> </div>
-        }
-        if (this.props.pokemon.information){
-           info = 
-           <div>
-                hello
-          </div>
-        }
-
-    }
     render() {
         var info;
-        if (this.props.pokemon.information === 'loading'){
-            info = <div> <Progress /> </div>
+        if (this.props.data=== 'loading'){
+            info = <div className="center">
+             <Progress /> 
+             </div>
         }
         if (this.props.pokemon){
            info = 
@@ -45,7 +34,8 @@ return (
 
 const mapStateToProps = (state) => { 
     return { 
-      pokemon: state.search.pokemon
+      pokemon: state.search.pokemon,
+      data: state.search.data
       };
   };
   
