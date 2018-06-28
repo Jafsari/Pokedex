@@ -16,6 +16,9 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
+import { compose } from 'redux';
 
 const styles = theme => ({
   card: {
@@ -44,7 +47,20 @@ const styles = theme => ({
 });
 
 class RecipeReviewCard extends React.Component {
-  state = { expanded: false };
+  state = { 
+      expanded: false,
+      data:false
+
+ };
+
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps)
+    if(nextProps !== undefined && nextProps.information.abilities) {  
+        (this.setState({
+            data:true
+        }));
+    } 
+}
 
   handleExpandClick = () => {
     this.setState(state => ({ expanded: !state.expanded }));
@@ -52,14 +68,20 @@ class RecipeReviewCard extends React.Component {
 
   render() {
     const { classes } = this.props;
-
+    console.log(this.state.data)
+    var pokemon = this.props.information.types.map((poke,index) => {
+        return (
+          {poke}.poke.type.name
+        )
+    })
+    console.log(pokemon.join(''))
     return (
       <div>
         <Card className={classes.card}>
           <CardHeader
             avatar={
               <Avatar aria-label="Recipe" className={classes.avatar}>
-                R
+                {this.props.information.name[0].toUpperCase()}
               </Avatar>
             }
             action={
@@ -67,18 +89,19 @@ class RecipeReviewCard extends React.Component {
                 <MoreVertIcon />
               </IconButton>
             }
-            title="Shrimp and Chorizo Paella"
-            subheader="September 14, 2016"
+            title={this.props.information.name.charAt(0).toUpperCase() + this.props.information.name.slice(1)}
+            subheader={pokemon}
           />
           <CardMedia
             className={classes.media}
-            image="/static/images/cards/paella.jpg"
+            image={this.props.information.sprites.front_default}
             title="Contemplative Reptile"
           />
           <CardContent>
             <Typography component="p">
               This impressive paella is a perfect party dish and a fun meal to cook together with
               your guests. Add 1 cup of frozen peas along with the mussels, if you like.
+              {this.props.information.base_experience}
             </Typography>
           </CardContent>
           <CardActions className={classes.actions} disableActionSpacing>
@@ -102,12 +125,9 @@ class RecipeReviewCard extends React.Component {
           <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
             <CardContent>
               <Typography paragraph variant="body2">
-                Method:
+                Characteristics
               </Typography>
-              <Typography paragraph>
-                Heat 1/2 cup of the broth in a pot until simmering, add saffron and set aside for 10
-                minutes.
-              </Typography>
+
               <Typography paragraph>
                 Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over medium-high
                 heat. Add chicken, shrimp and chorizo, and cook, stirring occasionally until lightly
@@ -134,8 +154,15 @@ class RecipeReviewCard extends React.Component {
   }
 }
 
-RecipeReviewCard.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
 
-export default withStyles(styles)(RecipeReviewCard);
+const mapStateToProps = (state) => { 
+    return { 
+      information: state.search.pokemon
+      };
+  };
+
+export default compose(
+    withStyles(styles),
+    connect(mapStateToProps,actions)
+)
+    (RecipeReviewCard);
