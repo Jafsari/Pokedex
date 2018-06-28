@@ -7,6 +7,8 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import { compose } from 'redux';
 import axios from 'axios';
+import { Icon } from 'react-icons-kit';
+import {ic_search} from 'react-icons-kit/md/ic_search';
 
 const styles = theme => ({
   container: {
@@ -42,7 +44,7 @@ class TextFields extends React.Component {
 
  handleRequest = (e) => {
      e.preventDefault();
-    this.props.search({Pokemon:this.state.Search}).then((response) => {
+    this.props.search({Pokemon:this.state.Search.toLowerCase()}).then((response) => {
         this.setState({Search:""})
     }).catch((error => {
         this.setState({Search:""})
@@ -69,6 +71,9 @@ class TextFields extends React.Component {
           id="Search"
           value={this.state.Search} 
            />
+           <span>
+            <Icon icon={ic_search} />
+            </span>
       </form>
     );
   }

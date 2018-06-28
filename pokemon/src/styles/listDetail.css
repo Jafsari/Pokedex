@@ -2,6 +2,6 @@
     text-align: center;
     display:flex;
     justify-content:center;
-    animation:fade-in 1s linear;
+    animation:fade-in 0.5s linear;
   }
   
