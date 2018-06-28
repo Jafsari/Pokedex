@@ -9,6 +9,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Drawer from './drawer.jsx'
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import Modal from './modal.jsx'
 
 const styles = {
   root: {
@@ -72,7 +73,8 @@ class ButtonAppBar extends React.Component {
           <Button href="/" variant="title" color="inherit" className={classes.flex}>
             Pokedex
           </Button>
-          <Button color="inherit">About</Button>
+
+          <Modal />
         </Toolbar>
       </AppBar>
     </div>
