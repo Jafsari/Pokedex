@@ -1,1 +1,2 @@
 export const SET_POKEMON = "SET_POKEMON"
+export const SET_POKEMON_LOADING = "SET_POKEMON_LOADING"

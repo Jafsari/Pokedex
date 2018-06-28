@@ -1,34 +1,55 @@
 import React, { Component } from 'react';
-import Progress from './progress.jsx'
+import Progress from './progress.jsx';
+import Card from './card.jsx';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
+import '../styles/listDetail.css'
+
 
 class ListDetail extends Component{
     constructor(props){
         super(props)
-        this.state = {
-            data: false,
-            information:{}
-        }
     }
-    componentWillReceiveProps(nextProps) {
-        if(nextProps.info.data) {  
-            (this.setState({
-                data:true,
-                information:[nextProps.info.data]
-            }));
-        } 
+    renderPokemon = () =>{
+        var info;
+        if (this.props.pokemon.information === 'loading'){
+            info = <div> <Progress /> </div>
+        }
+        if (this.props.pokemon.information){
+           info = 
+           <div>
+                hello
+          </div>
+        }
+
     }
     render() {
-        
+        var info;
+        if (this.props.pokemon.information === 'loading'){
+            info = <div> <Progress /> </div>
+        }
+        if (this.props.pokemon){
+           info = 
+           <span className='center'>
+                <Card />
+          </span>
+        }
 return (
     <div >
-        
+        {info}
     </div>
   );
 }
 }
 
 
-export default ListDetail;
+const mapStateToProps = (state) => { 
+    return { 
+      pokemon: state.search.pokemon
+      };
+  };
+  
+  export default connect(mapStateToProps,actions)(ListDetail);
 
 
 

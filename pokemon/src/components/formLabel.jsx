@@ -43,6 +43,7 @@ class TextFields extends React.Component {
  handleRequest = (e) => {
      e.preventDefault();
     this.props.search({Pokemon:this.state.Search}).then((response) => {
+
         this.setState({Search:""})
     }).catch((error => {
         this.setState({Search:""})
