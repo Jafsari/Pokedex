@@ -13,7 +13,7 @@ router.post('/', (req,res) => {
       return res.json(response);
     })
     .catch(function(error) {
-      console.log('There was an ERROR: ', error);
+      return res.json('There was an ERROR: ', error);
     });
 });
 

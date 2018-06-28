@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { SET_POKEMON, SET_POKEMON_LOADING } from './types.js'
+import { SET_POKEMON, SET_POKEMON_LOADING, SET_POKEMON_FAIL } from './types.js'
 
 export function search(data){
     let BASE_URL = 'http://localhost:9000/api/pokemon'
@@ -10,6 +10,7 @@ export function search(data){
       return dispatch(setPokemon(information))
      }).catch(e => {
       console.log(e)
+      return dispatch(setPokemonFail('Done'))
      })
     }
   }
@@ -25,6 +26,13 @@ export function search(data){
   export function setPokemonLoading(information){
       return{
           type:SET_POKEMON_LOADING,
+          information
+      }
+  }
+
+  export function setPokemonFail(information){
+      return{
+          type:SET_POKEMON_FAIL,
           information
       }
   }

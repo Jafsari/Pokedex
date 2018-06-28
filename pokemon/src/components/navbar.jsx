@@ -30,9 +30,9 @@ function ButtonAppBar(props) {
           <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
             <MenuIcon />
           </IconButton>
-          <Typography variant="title" color="inherit" className={classes.flex}>
+          <Button href="/" variant="title" color="inherit" className={classes.flex}>
             Pokedex
-          </Typography>
+          </Button>
           <Button color="inherit">About</Button>
         </Toolbar>
       </AppBar>

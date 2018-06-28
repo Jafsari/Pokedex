@@ -1,4 +1,4 @@
-import { SET_POKEMON, SET_POKEMON_LOADING } from '../actions/types'
+import { SET_POKEMON, SET_POKEMON_LOADING, SET_POKEMON_FAIL } from '../actions/types'
 
 const DEFAULT_STATE = {
     pokemon:false,
@@ -12,6 +12,10 @@ export default (state = DEFAULT_STATE, action) => {
         pokemon:action.information
       };
       case SET_POKEMON_LOADING:
+      return{
+          data:action.information
+      }
+      case SET_POKEMON_FAIL:
       return{
           data:action.information
       }

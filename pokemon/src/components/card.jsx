@@ -25,7 +25,7 @@ const styles = theme => ({
     maxWidth: 400,
   },
   media: {
-    height: 0,
+    height: 50,
     paddingTop: '56.25%', // 16:9
   },
   actions: {
@@ -48,33 +48,30 @@ const styles = theme => ({
 
 class RecipeReviewCard extends React.Component {
   state = { 
-      expanded: false,
-      data:false
-
+      expanded: false
  };
-
-  componentWillReceiveProps(nextProps) {
-    console.log(nextProps)
-    if(nextProps !== undefined && nextProps.information.abilities) {  
-        (this.setState({
-            data:true
-        }));
-    } 
-}
-
   handleExpandClick = () => {
     this.setState(state => ({ expanded: !state.expanded }));
   };
-
   render() {
     const { classes } = this.props;
-    console.log(this.state.data)
     var pokemon = this.props.information.types.map((poke,index) => {
         return (
-          {poke}.poke.type.name
+          {poke}.poke.type.name.charAt(0).toUpperCase() + {poke}.poke.type.name.slice(1)
+        )
+    })
+    var stats = this.props.information.stats.map((stat,index) => {
+        return (
+           {stat}.stat.stat.name,{stat}.stat.base_stat
+        )
+    })
+    var answer = stats.map((info,index) => {
+        return (
+            {info}
         )
     })
     console.log(pokemon.join(''))
+    console.log(answer)
     return (
       <div>
         <Card className={classes.card}>
@@ -99,8 +96,7 @@ class RecipeReviewCard extends React.Component {
           />
           <CardContent>
             <Typography component="p">
-              <strong>This impressive paella is a perfect party dish and a fun meal to cook together with
-              your guests. Add 1 cup of frozen peas along with the mussels, if you like.</strong>
+            Bulbasaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ivysaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venusaur Lorem
             </Typography>
           </CardContent>
           <CardActions className={classes.actions} disableActionSpacing>
