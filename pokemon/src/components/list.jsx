@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ListDetail from './listDetail.jsx';
+import ListDetail from '../containers/listDetail.jsx';
 
 const List = (props) => {
   return (

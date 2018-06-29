@@ -56,8 +56,7 @@ class TextFields extends React.Component {
 
   }
 
-  render() {
-      
+  render() {      
     const { classes } = this.props;
     return (
       <form className={classes.container} noValidate autoComplete="off" onSubmit={this.handleRequest}>
@@ -67,7 +66,7 @@ class TextFields extends React.Component {
           InputLabelProps={{
             shrink: true,
           }}
-          placeholder="Search Pokemon"
+          placeholder={this.props.placeholder}
           helperText="Trust us!"
           fullWidth
           margin="normal"
