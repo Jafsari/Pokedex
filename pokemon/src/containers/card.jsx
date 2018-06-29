@@ -47,6 +47,9 @@ const styles = theme => ({
 });
 
 class RecipeReviewCard extends React.Component {
+  constructor(props){
+    super(props)
+  }
   state = { 
       expanded: false
  };
@@ -55,34 +58,13 @@ class RecipeReviewCard extends React.Component {
   };
   render() {
     const { classes } = this.props;
-    var pokemon = this.props.information.types.map((poke,index) => {
-        return (
-          {poke}.poke.type.name.charAt(0).toUpperCase() + {poke}.poke.type.name.slice(1)
-        )
-    })
-    var stats = this.props.information.stats.map((stat,index) => {
-        return (
-           {stat}.stat.stat.name,{stat}.stat.base_stat
-        )
-    })
-    var answer = stats.map((info,index) => {
-        return (
-            {info}
-        )
-    })
-    var check =  (this.props.effect.effect_entries[0] ? (
-        <div> </div>
-    ): (
-        <div>{this.props.effect.effect_entries[0].effect} </div>
-    ));
-    console.log(check)
     return (
       <div>
         <Card className={classes.card}>
           <CardHeader
             avatar={
               <Avatar aria-label="Recipe" className={classes.avatar}>
-                {this.props.information.name[0].toUpperCase()}
+                {this.props.Character}
               </Avatar>
             }
             action={
@@ -90,22 +72,21 @@ class RecipeReviewCard extends React.Component {
                 <MoreVertIcon />
               </IconButton>
             }
-            title={this.props.information.name.charAt(0).toUpperCase() + this.props.information.name.slice(1)}
-            subheader={pokemon}
+            title={this.props.title}
+            subheader={this.props.subHeader}
           />
           <CardMedia
             className={classes.media}
-            image={this.props.information.sprites.front_default}
+            image={this.props.cardMedia}
             title="Contemplative Reptile"
           />
           <CardContent>
             <Typography component="p">
             <div>
-            <strong> {this.props.effect.name.charAt(0).toUpperCase() + this.props.effect.name.slice(1)} </strong>
+            <strong> {this.props.cardContent} </strong>
             </div>
-                {this.props.effect.effect_entries[0].effect}
-                {this.props.effect.effect_entries[0].short_effect}
-               {console.log(this.props.effect.effect_entries)}
+            {this.props.cardDescription1}
+            {this.props.cardDescription2}
             </Typography>
           </CardContent>
           <CardActions className={classes.actions} disableActionSpacing>
