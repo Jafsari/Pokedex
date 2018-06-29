@@ -45,6 +45,7 @@ class TextFields extends React.Component {
 
  handleRequest = (e) => {
      e.preventDefault();
+     if (this.props.placeholder === 'Search Pokemon'){
     this.props.search({Pokemon:this.state.Search.toLowerCase()}).then((response) => {
         this.setState({Search:""})
     }).then(() => {
@@ -53,10 +54,18 @@ class TextFields extends React.Component {
     .catch((error => {
         this.setState({Search:""})
     }))
-
+  }
+  if (this.props.placeholder ==='Search Berries'){
+    this.props.berries({Berries:this.state.Search.toLowerCase()}).then((response) => {
+      this.setState({Search:""})
+    }).catch(( error => {
+      this.setState({Search:""})
+    }))
+  }
   }
 
   render() {      
+    console.log(this.props.placeholder)
     const { classes } = this.props;
     return (
       <form className={classes.container} noValidate autoComplete="off" onSubmit={this.handleRequest}>

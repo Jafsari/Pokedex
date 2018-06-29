@@ -29,4 +29,15 @@ router.post('/ability',(req,res) => {
   });
 })
 
+router.post('/berries',(req,res) => {
+  P.getBerryByName('cheri')
+  .then(function(response) {
+    console.log(response);
+    return res.json(response)
+  })
+  .catch(function(error) {
+    console.log('There was an ERROR: ', error);
+  });
+})
+
 module.exports = router;

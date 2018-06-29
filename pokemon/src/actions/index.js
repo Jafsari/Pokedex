@@ -1,6 +1,8 @@
 import axios from 'axios';
-import { SET_POKEMON, SET_POKEMON_LOADING, SET_POKEMON_FAIL,SET_ABILITY, SET_ABILITY_FAIL } from './types.js'
+import { SET_POKEMON, SET_POKEMON_LOADING, SET_POKEMON_FAIL,SET_ABILITY, SET_ABILITY_FAIL, SET_BERRIES_FAIL, SET_BERRIES } from './types.js'
 
+
+/*       POKEMON       */
 export function search(data){
     let BASE_URL = 'http://localhost:9000/api/pokemon'
     return dispatch => {
@@ -14,21 +16,7 @@ export function search(data){
      })
     }
   }
-
-  export function ability(data){
-    let BASE_URL = 'http://localhost:9000/api/pokemon/ability'
-    return dispatch => {
-    return axios.post(BASE_URL,data).then(res => {
-      const information = res.data;
-        dispatch(setAbility(information))
-     }).catch(e => {
-      console.log(e)
-      return dispatch(setAbilityFail('Done'))
-     })
-    }
-  }
-
-  export function setPokemon(information){
+ export function setPokemon(information){
     return{
       type:SET_POKEMON,
       information
@@ -50,7 +38,20 @@ export function search(data){
   }
 
 
-  /* ABILITY */
+  /*        ABILITY       */
+
+  export function ability(data){
+    let BASE_URL = 'http://localhost:9000/api/pokemon/ability'
+    return dispatch => {
+    return axios.post(BASE_URL,data).then(res => {
+      const information = res.data;
+        dispatch(setAbility(information))
+     }).catch(e => {
+      console.log(e)
+      return dispatch(setAbilityFail('Done'))
+     })
+    }
+  }
 
   export function setAbility(information){
       return{
@@ -65,3 +66,33 @@ export function search(data){
         information
     }
 }
+
+/*     BERRIES      */
+
+export function berries(data){
+    let BASE_URL = 'http://localhost:9000/api/pokemon/berries'
+    return dispatch => {
+    return axios.post(BASE_URL,data).then(res => {
+      const information = res.data;
+        dispatch(setBerries(information))
+     }).catch(e => {
+      console.log(e)
+      return dispatch(setBerriesFail('Done'))
+     })
+    }
+  }
+
+  export function setBerries(information){
+    return{
+        type:SET_BERRIES,
+        information
+    }
+}
+
+export function setBerriesFail(information){
+  return{
+      type:SET_BERRIES_FAIL,
+      information
+  }
+}
+
