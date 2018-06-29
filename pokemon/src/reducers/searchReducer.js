@@ -1,8 +1,9 @@
-import { SET_POKEMON, SET_POKEMON_LOADING, SET_POKEMON_FAIL } from '../actions/types'
+import { SET_POKEMON, SET_POKEMON_LOADING, SET_POKEMON_FAIL, SET_ABILITY, SET_ABILITY_FAIL } from '../actions/types'
 
 const DEFAULT_STATE = {
     pokemon:false,
-    data:false
+    data:false,
+    ability:false
   };
 
 export default (state = DEFAULT_STATE, action) => {

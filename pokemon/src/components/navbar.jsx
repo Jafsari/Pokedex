@@ -62,11 +62,6 @@ class ButtonAppBar extends React.Component {
             </IconButton>
           </div>
           <div className={classes.drawerInner}>
-            {/* <p>drawer content</p>
-            <p>drawer content</p>
-            <p>drawer content</p>
-            <p>drawer content</p>
-            <p>drawer content</p> */}
           </div>
         </Drawer>
             </IconButton>

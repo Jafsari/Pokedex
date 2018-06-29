@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { SET_POKEMON, SET_POKEMON_LOADING, SET_POKEMON_FAIL } from './types.js'
+import { SET_POKEMON, SET_POKEMON_LOADING, SET_POKEMON_FAIL,SET_ABILITY, SET_ABILITY_FAIL } from './types.js'
 
 export function search(data){
     let BASE_URL = 'http://localhost:9000/api/pokemon'
@@ -15,6 +15,18 @@ export function search(data){
     }
   }
 
+  export function ability(data){
+    let BASE_URL = 'http://localhost:9000/api/pokemon/ability'
+    return dispatch => {
+    return axios.post(BASE_URL,data).then(res => {
+      const information = res.data;
+        dispatch(setAbility(information))
+     }).catch(e => {
+      console.log(e)
+      return dispatch(setAbilityFail('Done'))
+     })
+    }
+  }
 
   export function setPokemon(information){
     return{
@@ -36,3 +48,20 @@ export function search(data){
           information
       }
   }
+
+
+  /* ABILITY */
+
+  export function setAbility(information){
+      return{
+          type:SET_ABILITY,
+          information
+      }
+  }
+
+  export function setAbilityFail(information){
+    return{
+        type:SET_ABILITY_FAIL,
+        information
+    }
+}

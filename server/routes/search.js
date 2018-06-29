@@ -17,4 +17,16 @@ router.post('/', (req,res) => {
     });
 });
 
+router.post('/ability',(req,res) => {
+  console.log(req.body)
+  const { Effect } = req.body
+  P.getAbilityByName(`${Effect}`)
+  .then(function(response) {
+    return res.json(response)
+  })
+  .catch(function(error) {
+    console.log('There was an ERROR: ', error);
+  });
+})
+
 module.exports = router;

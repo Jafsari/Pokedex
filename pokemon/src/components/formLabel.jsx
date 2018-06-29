@@ -35,6 +35,7 @@ class TextFields extends React.Component {
         }
     }
 
+
     handleChange = (e) => {
         this.setState({
              [e.target.name]: e.target.value
@@ -46,12 +47,17 @@ class TextFields extends React.Component {
      e.preventDefault();
     this.props.search({Pokemon:this.state.Search.toLowerCase()}).then((response) => {
         this.setState({Search:""})
-    }).catch((error => {
+    }).then(() => {
+        this.props.ability({Effect:this.props.pokemon.abilities[0].ability.name})
+    })
+    .catch((error => {
         this.setState({Search:""})
     }))
+
   }
 
   render() {
+      
     const { classes } = this.props;
     return (
       <form className={classes.container} noValidate autoComplete="off" onSubmit={this.handleRequest}>
@@ -83,9 +89,16 @@ TextFields.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
+const mapStateToProps = (state) => { 
+    return { 
+      pokemon:state.search.pokemon
+      };
+  };
+  
+
 export default compose(
     withStyles(styles),
-    connect(null,actions)
+    connect(mapStateToProps,actions)
 )
 (TextFields);
 

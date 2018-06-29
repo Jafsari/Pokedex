@@ -70,8 +70,12 @@ class RecipeReviewCard extends React.Component {
             {info}
         )
     })
-    console.log(pokemon.join(''))
-    console.log(answer)
+    var check =  (this.props.effect.effect_entries[0] ? (
+        <div> </div>
+    ): (
+        <div>{this.props.effect.effect_entries[0].effect} </div>
+    ));
+    console.log(check)
     return (
       <div>
         <Card className={classes.card}>
@@ -96,7 +100,12 @@ class RecipeReviewCard extends React.Component {
           />
           <CardContent>
             <Typography component="p">
-            Bulbasaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ivysaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venusaur Lorem
+            <div>
+            <strong> {this.props.effect.name.charAt(0).toUpperCase() + this.props.effect.name.slice(1)} </strong>
+            </div>
+                {this.props.effect.effect_entries[0].effect}
+                {this.props.effect.effect_entries[0].short_effect}
+               {console.log(this.props.effect.effect_entries)}
             </Typography>
           </CardContent>
           <CardActions className={classes.actions} disableActionSpacing>
@@ -142,7 +151,8 @@ class RecipeReviewCard extends React.Component {
 
 const mapStateToProps = (state) => { 
     return { 
-      information: state.search.pokemon
+      information: state.search.pokemon,
+      effect: state.power.ability
       };
   };
 

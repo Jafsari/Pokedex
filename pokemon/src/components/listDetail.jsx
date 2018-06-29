@@ -3,7 +3,8 @@ import Progress from './progress.jsx';
 import Card from './card.jsx';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
-import '../styles/listDetail.css'
+import '../styles/listDetail.css';
+
 
 
 class ListDetail extends Component{
@@ -17,7 +18,7 @@ class ListDetail extends Component{
              <Progress /> 
              </div>
         }
-        if (this.props.pokemon){
+        if (this.props.pokemon && this.props.effect){
            info = 
            <span className='center'>
                 <Card />
@@ -35,7 +36,8 @@ return (
 const mapStateToProps = (state) => { 
     return { 
       pokemon: state.search.pokemon,
-      data: state.search.data
+      data: state.search.data,
+      effect: state.power.ability
       };
   };
   
