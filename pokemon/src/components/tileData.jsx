@@ -55,11 +55,11 @@ export const otherMailFolderListItems = (
       </ListItemIcon>
       <ListItemText primary="Locations" />
     </ListItem>
-    <ListItem button component={Link} to="/natures">
+    <ListItem button component={Link} to="/moves">
       <ListItemIcon>
         <ReportIcon />
       </ListItemIcon>
-      <ListItemText primary="Natures" />
+      <ListItemText primary='Moves' />
     </ListItem>
   </div>
 );

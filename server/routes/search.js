@@ -41,4 +41,64 @@ router.post('/berries',(req,res) => {
   });
 })
 
+router.post('/encounters',(req,res) => {
+  P.getEncounterMethodByName("walk")
+  .then(function(response) {
+    console.log(response);
+  })
+  .catch(function(error) {
+    console.log('There was an ERROR: ', error);
+  });
+})
+
+router.post('/evolution',(req,res) => {
+  P.getEvolutionTriggerByName("level-up")
+  .then(function(response) {
+    console.log(response);
+  })
+  .catch(function(error) {
+    console.log('There was an ERROR: ', error);
+  });
+})
+
+router.post('/games',(req,res) => {
+  P.getVersionByName("red")
+  .then(function(response) {
+    console.log(response);
+  })
+  .catch(function(error) {
+    console.log('There was an ERROR: ', error);
+  });
+})
+
+router.post('/items',(req,res) => {
+  P.getItemByName("master-ball")
+  .then(function(response) {
+    console.log(response);
+  })
+  .catch(function(error) {
+    console.log('There was an ERROR: ', error);
+  });
+})
+
+router.post('/moves',(req,res) => {
+  P.getMoveByName("pound")
+  .then(function(response) {
+    console.log(response);
+  })
+  .catch(function(error) {
+    console.log('There was an ERROR: ', error);
+  });
+})
+
+router.post('/location',(req,res) => {
+  P.getLocationAreaByName("canalave-city-area")
+  .then(function(response) {
+    console.log(response);
+  })
+  .catch(function(error) {
+    console.log('There was an ERROR: ', error);
+  });
+})
+
 module.exports = router;
