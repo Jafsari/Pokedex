@@ -4,6 +4,7 @@ import Card from './card.jsx';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import '../styles/listDetail.css';
+import berryImage from '../pics/pokemon-berry.png'
 
 
 
@@ -12,7 +13,8 @@ class ListDetail extends Component{
         super(props)
     }
     render() {
-        var info;
+       var info;
+       var berrysubHeader = 'Natural Power' + ' ' + this.props.berry.natural_gift_power
         if (this.props.data=== 'loading'){
             info = <div className="center">
              <Progress /> 
@@ -53,9 +55,21 @@ class ListDetail extends Component{
           </span>
         }
        if (this.props.berry){
+           var cardDescription1 = "Natural Type" + " " + this.props.berry.natural_gift_type.name.charAt(0).toUpperCase() + this.props.berry.natural_gift_type.name.slice(1)
+           var cardDescription2 = "Max Harvest" + " " + this.props.berry.max_harvest
+           var cardDescription3 = "Smoothness" + " " + this.props.berry.smoothness
            info = 
            <span className='center'>
-           <Card />
+           <Card 
+           title={this.props.berry.name.charAt(0).toUpperCase() + this.props.berry.name.slice(1)}
+           cardMedia = {berryImage}
+           Character = {this.props.berry.name[0].toUpperCase()}
+           subHeader = {berrysubHeader}
+           cardContent = {this.props.berry.firmness.name.charAt(0).toUpperCase() + this.props.berry.firmness.name.slice(1)}
+           cardDescription1 = {cardDescription1}
+           cardDescription2 = {cardDescription2}
+           cardDescription3 = {cardDescription3}
+           />
      </span>
        }
        console.log(this.props.berry)

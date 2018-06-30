@@ -85,8 +85,16 @@ class RecipeReviewCard extends React.Component {
             <div>
             <strong> {this.props.cardContent} </strong>
             </div>
+            <div>
             {this.props.cardDescription1}
+            </div>
+            <div>
             {this.props.cardDescription2}
+            </div>
+            <div>
+              {this.props.cardDescription3}
+            </div>
+
             </Typography>
           </CardContent>
           <CardActions className={classes.actions} disableActionSpacing>

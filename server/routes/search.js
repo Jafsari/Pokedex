@@ -30,7 +30,8 @@ router.post('/ability',(req,res) => {
 })
 
 router.post('/berries',(req,res) => {
-  P.getBerryByName('cheri')
+  console.log(req.body)
+  P.getBerryByName(req.body.Berries)
   .then(function(response) {
     console.log(response);
     return res.json(response)
