@@ -13,7 +13,7 @@ class App extends Component {
        <Nav />
       </nav>
     <header>
-      <Header placeholder ="Search Encounters"/>
+      <Header placeholder ="Search Natures"/>
     </header>
     <main>
       <List />

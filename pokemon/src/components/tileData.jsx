@@ -26,11 +26,11 @@ export const mailFolderListItems = (
       </ListItemIcon>
       <ListItemText primary="Evolutions" />
     </ListItem>
-    <ListItem button component={Link} to="/encounters">
+    <ListItem button component={Link} to="/natures">
       <ListItemIcon>
         <SendIcon />
       </ListItemIcon>
-      <ListItemText primary="Encounters" />
+      <ListItemText primary="Natures" />
     </ListItem>
     <ListItem button component={Link} to="/items">
       <ListItemIcon>

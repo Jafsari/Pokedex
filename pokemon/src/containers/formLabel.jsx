@@ -69,10 +69,37 @@ class TextFields extends React.Component {
       this.setState({Search:""})
     })
   }
+  if (this.props.placeholder ==='Search Items'){
+    this.props.items({Item:this.state.Search.toLowerCase()}).then((response) => {
+      this.setState({Search:""})
+    }).catch( error => {
+      this.setState({Search:""})
+    })
+  }
+  if (this.props.placeholder ==='Search Locations'){
+    this.props.locations({Location:this.state.Search.toLowerCase()}).then((response) => {
+      this.setState({Search:""})
+    }).catch( error => {
+      this.setState({Search:""})
+    })
+  }
+  if (this.props.placeholder ==='Search Games'){
+    this.props.games({Game:this.state.Search.toLowerCase()}).then((response) => {
+      this.setState({Search:""})
+    }).catch( error => {
+      this.setState({Search:""})
+    })
+  }
+  if (this.props.placeholder ==='Search Natures'){
+    this.props.natures({Nature:this.state.Search.toLowerCase()}).then((response) => {
+      this.setState({Search:""})
+    }).catch( error => {
+      this.setState({Search:""})
+    })
+  }
   }
 
   render() {      
-    console.log(this.props.placeholder)
     const { classes } = this.props;
     return (
       <form className={classes.container} noValidate autoComplete="off" onSubmit={this.handleRequest}>

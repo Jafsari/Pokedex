@@ -5,7 +5,7 @@ import {
     SET_BERRIES_FAIL, SET_BERRIES, BERRIES_CONNECT, //Berries
     SET_MOVES_FAIL, SET_MOVES, MOVES_CONNECT, // Moves
     SET_EVOLUTIONS_FAIL, SET_EVOLUTIONS, EVOLUTIONS_CONNECT, //Evolution
-    SET_ENCOUNTERS_FAIL, SET_ENCOUNTERS, ENCOUNTERS_CONNECT, // Encounters
+    SET_NATURES_FAIL, SET_NATURES, NATURES_CONNECT, // Encounters
     SET_ITEMS_FAIL, SET_ITEMS, ITEMS_CONNECT, // Items
     SET_GAMES_FAIL, SET_GAMES, GAMES_CONNECT, // Games
     SET_LOCATIONS_FAIL, SET_LOCATIONS, LOCATIONS_CONNECT // Locations
@@ -202,38 +202,38 @@ return{
 }
 }
 
-/* ENCOUNTERS */
+/* NATURES */
 
-export function encounters(data){
-    let BASE_URL = 'http://localhost:9000/api/pokemon/encounters'
+export function natures(data){
+    let BASE_URL = 'http://localhost:9000/api/pokemon/natures'
     return dispatch => {
     return axios.post(BASE_URL,data).then(res => {
       const information = res.data;
-        dispatch(setEncounters(information))
+        dispatch(setNatures(information))
      }).catch(e => {
       console.log(e)
-      return dispatch(setencountersFail('Done'))
+      return dispatch(setnaturesFail('Done'))
      })
     }
   }
 
-  export function setEncounters(information){
+  export function setNatures(information){
     return{
-        type:SET_ENCOUNTERS,
+        type:SET_NATURES,
         information
     }
 }
 
-export function encountersConnect(information){
+export function naturesConnect(information){
     return{
-        type:ENCOUNTERS_CONNECT,
+        type:NATURES_CONNECT,
         information
     }
 }
 
-export function setencountersFail(information){
+export function setnaturesFail(information){
 return{
-    type:SET_ENCOUNTERS_FAIL,
+    type:SET_NATURES_FAIL,
     information
 }
 }

@@ -10,7 +10,7 @@ import Evolutions from './components/evolutions.jsx';
 import Games  from './components/games.jsx';
 import Items from './components/items.jsx';
 import Locations from './components/locations.jsx';
-import Encounters from './components/encounters.jsx';
+import Natures from './components/natures.jsx';
 import Moves from './components/moves.jsx';
 
 
@@ -27,7 +27,7 @@ class App extends Component {
         <Route exact path="/games" component={Games} />
         <Route exact path="/items" component={Items} />
         <Route exact path="/locations" component={Locations} />
-        <Route exact path="/encounters" component={Encounters} />
+        <Route exact path="/natures" component={Natures} />
         <Route exact path="/moves" component={Moves} />
         </Switch>
       </div>

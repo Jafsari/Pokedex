@@ -41,14 +41,17 @@ router.post('/berries',(req,res) => {
   });
 })
 
-router.post('/encounters',(req,res) => {
-  P.getEncounterMethodByName("walk")
-  .then(function(response) {
-    console.log(response);
-  })
-  .catch(function(error) {
-    console.log('There was an ERROR: ', error);
-  });
+router.post('/natures',(req,res) => {
+  console.log(req.body)
+  const { Nature } = req.body
+  P.getNatureByName(Nature)
+    .then(function(response) {
+      console.log(response);
+      return res.json(response)
+    })
+    .catch(function(error) {
+      console.log('There was an ERROR: ', error);
+    });
 })
 
 router.post('/evolution',(req,res) => {
@@ -62,19 +65,23 @@ router.post('/evolution',(req,res) => {
 })
 
 router.post('/games',(req,res) => {
-  P.getVersionByName("red")
-  .then(function(response) {
-    console.log(response);
-  })
-  .catch(function(error) {
-    console.log('There was an ERROR: ', error);
-  });
+  P.getPokedexByName("kanto")
+    .then(function(response) {
+      console.log(response);
+      return res.json(response)
+    })
+    .catch(function(error) {
+      console.log('There was an ERROR: ', error);
+    });
 })
 
 router.post('/items',(req,res) => {
-  P.getItemByName("master-ball")
+  console.log(req.body)
+  const { Item } = req.body
+  P.getItemByName(Item)
   .then(function(response) {
     console.log(response);
+    return res.json(response)
   })
   .catch(function(error) {
     console.log('There was an ERROR: ', error);
@@ -83,7 +90,7 @@ router.post('/items',(req,res) => {
 
 router.post('/moves',(req,res) => {
   console.log(req.body)
-  var { Moves } = req.body
+  const { Moves } = req.body
   P.getMoveByName(Moves)
   .then(function(response) {
     console.log(response);
@@ -94,14 +101,17 @@ router.post('/moves',(req,res) => {
   });
 })
 
-router.post('/location',(req,res) => {
-  P.getLocationAreaByName("canalave-city-area")
-  .then(function(response) {
-    console.log(response);
-  })
-  .catch(function(error) {
-    console.log('There was an ERROR: ', error);
-  });
+router.post('/locations',(req,res) => {
+  console.log(req.body)
+  const { Location } = req.body
+  P.getRegionByName(Location)
+    .then(function(response) {
+      console.log(response);
+      return res.json(response)
+    })
+    .catch(function(error) {
+      console.log('There was an ERROR: ', error);
+    });
 })
 
 module.exports = router;

@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import search from './searchReducer';
 import power from './abilityReducer';
 import berries from './berriesReducer';
-import encounters from './encountersReducer';
+import natures from './naturesReducer';
 import evolution from './evolutionReducer';
 import games from './gamesReducer';
 import item from './itemReducer';
@@ -12,7 +12,7 @@ export default combineReducers({
 search,
 power,
 berries,
-encounters,
+natures,
 evolution,
 games,
 item,
