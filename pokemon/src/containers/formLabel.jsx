@@ -62,6 +62,13 @@ class TextFields extends React.Component {
       this.setState({Search:""})
     }))
   }
+  if (this.props.placeholder ==='Search Moves'){
+    this.props.moves({Moves:this.state.Search.toLowerCase()}).then((response) => {
+      this.setState({Search:""})
+    }).catch( error => {
+      this.setState({Search:""})
+    })
+  }
   }
 
   render() {      

@@ -7,6 +7,7 @@ import evolution from './evolutionReducer';
 import games from './gamesReducer';
 import item from './itemReducer';
 import locations from './locationsReducer';
+import moves from './movesReducer'
 export default combineReducers({
 search,
 power,
@@ -15,5 +16,6 @@ encounters,
 evolution,
 games,
 item,
-locations
+locations,
+moves
 });

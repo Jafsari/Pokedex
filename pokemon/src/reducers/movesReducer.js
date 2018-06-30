@@ -1,17 +1,17 @@
-import { MOVES_LOCATIONS, MOVES_LOCATIONS_FAIL } from '../actions/types'
+import { SET_MOVES, SET_MOVES_FAIL } from '../actions/types'
 
 const DEFAULT_STATE = {
-    MOVES:false
+    moves:false
   };
   export default (state = DEFAULT_STATE, action) => {
     switch(action.type){
-    case MOVES_LOCATIONS:
+    case SET_MOVES:
     return{
-    MOVES:action.information
+    moves:action.information
     }
-    case MOVES_LOCATIONS_FAIL:
+    case SET_MOVES_FAIL:
     return{
-    MOVES:action.information
+    moves:action.information
     }
           default:
           return state;

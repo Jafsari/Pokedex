@@ -82,9 +82,12 @@ router.post('/items',(req,res) => {
 })
 
 router.post('/moves',(req,res) => {
-  P.getMoveByName("pound")
+  console.log(req.body)
+  var { Moves } = req.body
+  P.getMoveByName(Moves)
   .then(function(response) {
     console.log(response);
+    return res.json(response)
   })
   .catch(function(error) {
     console.log('There was an ERROR: ', error);
