@@ -14,7 +14,6 @@ class ListDetail extends Component{
     }
     render() {
        var info;
-       var berrysubHeader = 'Natural Power' + ' ' + this.props.berry.natural_gift_power
         if (this.props.data=== 'loading'){
             info = <div className="center">
              <Progress /> 
@@ -55,6 +54,7 @@ class ListDetail extends Component{
           </span>
         }
        if (this.props.berry){
+           var berrysubHeader = 'Natural Power' + ' ' + this.props.berry.natural_gift_power
            var cardDescription1 = "Natural Type" + " " + this.props.berry.natural_gift_type.name.charAt(0).toUpperCase() + this.props.berry.natural_gift_type.name.slice(1)
            var cardDescription2 = "Max Harvest" + " " + this.props.berry.max_harvest
            var cardDescription3 = "Smoothness" + " " + this.props.berry.smoothness

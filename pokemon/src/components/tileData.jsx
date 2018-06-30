@@ -20,19 +20,19 @@ export const mailFolderListItems = (
       </ListItemIcon>
       <ListItemText primary="Berries"  />
     </ListItem>
-    <ListItem button>
+    <ListItem button component={Link} to="/evolutions">
       <ListItemIcon>
         <StarIcon />
       </ListItemIcon>
       <ListItemText primary="Evolutions" />
     </ListItem>
-    <ListItem button>
+    <ListItem button component={Link} to="/encounters">
       <ListItemIcon>
         <SendIcon />
       </ListItemIcon>
       <ListItemText primary="Encounters" />
     </ListItem>
-    <ListItem button>
+    <ListItem button component={Link} to="/items">
       <ListItemIcon>
         <DraftsIcon />
       </ListItemIcon>
@@ -43,19 +43,19 @@ export const mailFolderListItems = (
 
 export const otherMailFolderListItems = (
   <div>
-    <ListItem button>
+    <ListItem button component={Link} to="/games">
       <ListItemIcon>
         <MailIcon />
       </ListItemIcon>
       <ListItemText primary="Games" />
     </ListItem>
-    <ListItem button>
+    <ListItem button component={Link} to="/locations">
       <ListItemIcon>
         <DeleteIcon />
       </ListItemIcon>
       <ListItemText primary="Locations" />
     </ListItem>
-    <ListItem button>
+    <ListItem button component={Link} to="/natures">
       <ListItemIcon>
         <ReportIcon />
       </ListItemIcon>

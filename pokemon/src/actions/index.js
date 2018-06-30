@@ -1,6 +1,23 @@
 import axios from 'axios';
-import { SET_POKEMON, SET_POKEMON_LOADING, SET_POKEMON_FAIL,SET_ABILITY, SET_ABILITY_FAIL, SET_BERRIES_FAIL, SET_BERRIES } from './types.js'
+import { SET_POKEMON, SET_POKEMON_LOADING, SET_POKEMON_FAIL,SET_ABILITY, SET_ABILITY_FAIL, SET_BERRIES_FAIL, SET_BERRIES, BERRIES_CONNECT } from './types.js'
 
+
+
+
+/*        HELPER       */
+
+const reduxAPIRequest = (data,route,action1,action2) => {
+    let BASE_URL = `http://localhost:9000/api/pokemon/${route}`
+    return dispatch => {
+    return axios.post(BASE_URL,data).then(res => {
+      const information = res.data;
+        dispatch(action1(information))
+     }).catch(e => {
+      console.log(e)
+      return dispatch(action2('Done'))
+     })
+    }
+}
 
 /*       POKEMON       */
 export function search(data){
@@ -88,6 +105,12 @@ export function berries(data){
         information
     }
 }
+  export function berriesConnect(information){
+      return{
+          type:BERRIES_CONNECT,
+          information
+      }
+  }
 
 export function setBerriesFail(information){
   return{
@@ -96,3 +119,5 @@ export function setBerriesFail(information){
   }
 }
 
+
+/* EVOLUTIONS */
