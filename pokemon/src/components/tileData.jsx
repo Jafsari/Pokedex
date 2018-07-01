@@ -43,11 +43,11 @@ export const mailFolderListItems = (
 
 export const otherMailFolderListItems = (
   <div>
-    <ListItem button component={Link} to="/games">
+    <ListItem button component={Link} to="/regions">
       <ListItemIcon>
         <MailIcon />
       </ListItemIcon>
-      <ListItemText primary="Games" />
+      <ListItemText primary="Regions" />
     </ListItem>
     <ListItem button component={Link} to="/locations">
       <ListItemIcon>

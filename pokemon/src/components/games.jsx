@@ -13,7 +13,7 @@ class App extends Component {
        <Nav />
       </nav>
     <header>
-      <Header placeholder ="Search Games"/>
+      <Header placeholder ="Search Regions"/>
     </header>
     <main>
       <List />

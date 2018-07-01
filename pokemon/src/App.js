@@ -24,7 +24,7 @@ class App extends Component {
         <Route exact path='/' component={Landing} />
         <Route exact path="/berries" component={Berries} />
         <Route exact path="/evolutions" component={Evolutions} />
-        <Route exact path="/games" component={Games} />
+        <Route exact path="/regions" component={Games} />
         <Route exact path="/items" component={Items} />
         <Route exact path="/locations" component={Locations} />
         <Route exact path="/natures" component={Natures} />

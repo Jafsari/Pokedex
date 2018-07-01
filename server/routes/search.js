@@ -66,7 +66,9 @@ router.post('/evolution',(req,res) => {
 })
 
 router.post('/games',(req,res) => {
-  P.getPokedexByName("kanto")
+  console.log(req.body)
+  const { Game } = req.body
+  P.getPokedexByName(Game)
     .then(function(response) {
       console.log(response);
       return res.json(response)
@@ -103,9 +105,7 @@ router.post('/moves',(req,res) => {
 })
 
 router.post('/locations',(req,res) => {
-  console.log(req.body)
-  const { Location } = req.body
-  P.getRegionByName(Location)
+  P.getLocationAreaByName("canalave-city-area")
     .then(function(response) {
       console.log(response);
       return res.json(response)

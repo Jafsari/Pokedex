@@ -85,7 +85,7 @@ class TextFields extends React.Component {
       this.setState({Search:""})
     })
   }
-  if (this.props.placeholder ==='Search Games'){
+  if (this.props.placeholder ==='Search Regions'){
     this.props.games({Game:this.state.Search.toLowerCase()}).then((response) => {
       this.setState({Search:""})
     }).catch( error => {
@@ -103,7 +103,7 @@ class TextFields extends React.Component {
     this.props.evolutions({Pokemon:this.state.Search.toLowerCase()}).then((response) => {
         this.setState({Search:""})
     }).then(() => {
-        this.props.search({Effect:this.props.pokemon.name})
+        this.props.search({Pokemon:this.props.pokemon.name})
     })
     .catch((error => {
         this.setState({Search:""})

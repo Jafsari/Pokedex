@@ -4,8 +4,10 @@ import Card from './card.jsx';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import '../styles/listDetail.css';
-import berryImage from '../pics/pokemon-berry.png'
-import nature from '../pics/poke-ball.png'
+import berryImage from '../pics/pokemon-berry.png';
+import nature from '../pics/poke-ball.png';
+import map from '../pics/region.png';
+import charz from '../pics/charz.png';
 
 
 class ListDetail extends Component{
@@ -117,6 +119,60 @@ class ListDetail extends Component{
         />
   </span>
        }
+       if (this.props.region){
+        const title = this.props.region.name.charAt(0).toUpperCase() + this.props.region.name.slice(1)
+        const character = this.props.region.name[0].toUpperCase()
+        const cardDescription1 = this.props.region.descriptions[2].description
+        const cardDescription2 = this.props.region.version_groups.map((item,index) => {
+           return (
+           <div><strong> Game: </strong> {item.name}</div>
+           )
+        })
+        const summary = this.props.region.pokemon_entries.map((item,index) => {
+            return (
+            <div><strong> {item.entry_number}</strong> {item.pokemon_species.name}</div>
+            )
+         })
+     info = 
+     <span className='center'>
+     <Card 
+     title={title}
+     cardMedia={map}
+     Character={character}
+     subHeader
+     cardContent 
+     cardDescription1={cardDescription1}
+     cardDescription2={cardDescription2}
+     summary={summary}
+     />
+</span>
+       }
+    if (this.props.move){
+    const title = this.props.move.name.charAt(0).toUpperCase() + this.props.move.name.slice(1)
+    const character = this.props.move.type.name[0].toUpperCase()
+    const subHeader = this.props.move.type.name.charAt(0).toUpperCase() + this.props.move.type.name.slice(1)
+    const cardDescription1 = this.props.move.effect_entries[0].effect
+    const cardDescription2 = this.props.move.effect_entries[0].short_effect
+    const summary = 'Accuracy:' + ' ' + this.props.move.accuracy
+    const summary2 = 'Power:' + ' ' + this.props.move.power
+    const summary3 = 'PP:' + ' ' + this.props.move.pp
+     info = 
+     <span className='center'>
+     <Card 
+     title={title}
+     cardMedia={charz}
+     Character={character}
+     subHeader={subHeader}
+     cardContent 
+     cardDescription1= {cardDescription1}
+     cardDescription2= {cardDescription2}
+     summary={summary}
+     summary2={summary2}
+     summary3={summary3}
+     />
+</span>
+    }
+
 return (
     <div >
         {info}
@@ -133,7 +189,9 @@ const mapStateToProps = (state) => {
       effect: state.power.ability,
       berry: state.berries.berries,
       item: state.item.items,
-      nature: state.natures.natures
+      nature: state.natures.natures,
+      region: state.games.games,
+      move: state.moves.moves
       };
   };
   
