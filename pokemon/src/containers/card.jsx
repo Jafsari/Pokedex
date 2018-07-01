@@ -94,6 +94,9 @@ class RecipeReviewCard extends React.Component {
             <div>
               {this.props.cardDescription3}
             </div>
+            <div>
+              {this.props.cardDescription4}
+            </div>
 
             </Typography>
           </CardContent>

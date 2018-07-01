@@ -55,13 +55,14 @@ router.post('/natures',(req,res) => {
 })
 
 router.post('/evolution',(req,res) => {
-  P.getEvolutionTriggerByName("level-up")
-  .then(function(response) {
-    console.log(response);
-  })
-  .catch(function(error) {
-    console.log('There was an ERROR: ', error);
-  });
+  P.getEvolutionChainById(1)
+    .then(function(response) {
+      console.log(response);
+      return res.json(response)
+    })
+    .catch(function(error) {
+      console.log('There was an ERROR: ', error);
+    });
 })
 
 router.post('/games',(req,res) => {

@@ -6,6 +6,7 @@ const List = (props) => {
     <div className='content' >
             <ListDetail
              />
+
     </div>
   );
 };

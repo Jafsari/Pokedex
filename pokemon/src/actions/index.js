@@ -168,7 +168,7 @@ return{
 
 /* EVOLUTION */
 
-export function evolution(data){
+export function evolutions(data){
     let BASE_URL = 'http://localhost:9000/api/pokemon/evolution'
     return dispatch => {
     return axios.post(BASE_URL,data).then(res => {
@@ -346,3 +346,64 @@ return{
     information
 }
 }
+
+
+
+
+/* Helper */ 
+
+export const APIRequest = (info,foo) => {
+    if (info === 'Search Pokemon'){
+        this.props.search({Pokemon:foo.toLowerCase()}).then((response) => {
+            this.setState({Search:""})
+        }).then(() => {
+            this.props.ability({Effect:this.props.pokemon.abilities[0].ability.name})
+        })
+        .catch((error => {
+            this.setState({Search:""})
+        }))
+      }
+      if (info ==='Search Berries'){
+        this.props.berries({Berries:foo.toLowerCase()}).then((response) => {
+          this.setState({Search:""})
+        }).catch(( error => {
+          this.setState({Search:""})
+        }))
+      }
+      if (info ==='Search Moves'){
+        this.props.moves({Moves:foo.toLowerCase()}).then((response) => {
+          this.setState({Search:""})
+        }).catch( error => {
+          this.setState({Search:""})
+        })
+      }
+      if (info ==='Search Items'){
+        this.props.items({Item:foo.toLowerCase()}).then((response) => {
+          this.setState({Search:""})
+        }).catch( error => {
+          this.setState({Search:""})
+        })
+      }
+      if (info ==='Search Locations'){
+        this.props.locations({Location:foo.toLowerCase()}).then((response) => {
+          this.setState({Search:""})
+        }).catch( error => {
+          this.setState({Search:""})
+        })
+      }
+      if (info ==='Search Games'){
+        this.props.games({Game:foo.toLowerCase()}).then((response) => {
+          this.setState({Search:""})
+        }).catch( error => {
+          this.setState({Search:""})
+        })
+      }
+      if (info ==='Search Natures'){
+        this.props.natures({Nature:foo.toLowerCase()}).then((response) => {
+          this.setState({Search:""})
+        }).catch( error => {
+          this.setState({Search:""})
+        })
+      }
+      }
+    

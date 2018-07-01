@@ -9,6 +9,7 @@ import { compose } from 'redux';
 import axios from 'axios';
 import { Icon } from 'react-icons-kit';
 import {ic_search} from 'react-icons-kit/md/ic_search';
+import { APIRequest } from '../helper'
 
 const styles = theme => ({
   container: {
@@ -45,6 +46,7 @@ class TextFields extends React.Component {
 
  handleRequest = (e) => {
      e.preventDefault();
+    //  APIRequest(this.props.placeholder,this.state.Search);
      if (this.props.placeholder === 'Search Pokemon'){
     this.props.search({Pokemon:this.state.Search.toLowerCase()}).then((response) => {
         this.setState({Search:""})
@@ -96,6 +98,16 @@ class TextFields extends React.Component {
     }).catch( error => {
       this.setState({Search:""})
     })
+  }
+  if (this.props.placeholder === 'Search Evolutions'){
+    this.props.evolutions({Pokemon:this.state.Search.toLowerCase()}).then((response) => {
+        this.setState({Search:""})
+    }).then(() => {
+        this.props.search({Effect:this.props.pokemon.name})
+    })
+    .catch((error => {
+        this.setState({Search:""})
+    }))
   }
   }
 
