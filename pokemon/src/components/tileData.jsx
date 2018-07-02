@@ -11,6 +11,8 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import ReportIcon from '@material-ui/icons/Report';
 import {withRouter} from "react-router-dom";
 import {Link} from 'react-router-dom';
+import { connect } from 'react-redux';
+
 
 export const mailFolderListItems = (
   <div>

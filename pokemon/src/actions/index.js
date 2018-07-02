@@ -29,6 +29,18 @@ const reduxAPIRequest = (data,route,action1,action2) => {
     }
 }
 
+const reset = () => {
+    return dispatch => {
+    dispatch(setPokemon(false))
+    dispatch(setBerries(false))
+    dispatch(setEvolution(false))
+    dispatch(setGames(false))
+    dispatch(setLocations(false))
+    dispatch(setItems(false))
+    dispatch(setNatures(false))
+    }
+}
+
 
 /*       POKEMON       */
 export function search(data){
@@ -71,6 +83,13 @@ export function search(data){
   export function ability(data){
     let BASE_URL = 'http://localhost:9000/api/pokemon/ability'
     return dispatch => {
+        dispatch(setBerries(false))
+        dispatch(setEvolution(false))
+        dispatch(setGames(false))
+        dispatch(setLocations(false))
+        dispatch(setItems(false))
+        dispatch(setNatures(false))
+        dispatch(setMoves(false))
     return axios.post(BASE_URL,data).then(res => {
       const information = res.data;
     dispatch(setAbility(information))
@@ -107,7 +126,14 @@ export function abilityLOADING(information){
 export function berries(data){
     let BASE_URL = 'http://localhost:9000/api/pokemon/berries'
     return dispatch => {
-    
+        dispatch(setPokemon(false))
+        dispatch(setBerries(false))
+        dispatch(setEvolution(false))
+        dispatch(setGames(false))
+        dispatch(setLocations(false))
+        dispatch(setItems(false))
+        dispatch(setNatures(false))
+        dispatch(setMoves(false))
     dispatch(setPokemonLoading('loading'))
     return axios.post(BASE_URL,data).then(res => {
       const information = res.data;
@@ -146,7 +172,14 @@ export function setBerriesFail(information){
 export function moves(data){
     let BASE_URL = 'http://localhost:9000/api/pokemon/moves'
     return dispatch => {
-        
+        dispatch(setPokemon(false))
+        dispatch(setBerries(false))
+        dispatch(setEvolution(false))
+        dispatch(setGames(false))
+        dispatch(setLocations(false))
+        dispatch(setItems(false))
+        dispatch(setNatures(false))
+        dispatch(setMoves(false))
      dispatch(setPokemonLoading('loading'))
     return axios.post(BASE_URL,data).then(res => {
       const information = res.data;
@@ -183,9 +216,17 @@ return{
 /* EVOLUTION */
 
 export function evolutions(data){
+    reset()
     let BASE_URL = 'http://localhost:9000/api/pokemon/evolution'
     return dispatch => {
-        
+        dispatch(setPokemon(false))
+        dispatch(setBerries(false))
+        dispatch(setEvolution(false))
+        dispatch(setGames(false))
+        dispatch(setLocations(false))
+        dispatch(setItems(false))
+        dispatch(setNatures(false))
+        dispatch(setMoves(false))
     dispatch(setPokemonLoading('loading'))
     return axios.post(BASE_URL,data).then(res => {
       const information = res.data;
@@ -222,9 +263,17 @@ return{
 /* NATURES */
 
 export function natures(data){
+    reset()
     let BASE_URL = 'http://localhost:9000/api/pokemon/natures'
     return dispatch => {
-        
+        dispatch(setPokemon(false))
+        dispatch(setBerries(false))
+        dispatch(setEvolution(false))
+        dispatch(setGames(false))
+        dispatch(setLocations(false))
+        dispatch(setItems(false))
+        dispatch(setNatures(false))
+        dispatch(setMoves(false))
     dispatch(setPokemonLoading('loading'))
     return axios.post(BASE_URL,data).then(res => {
       const information = res.data;
@@ -263,7 +312,14 @@ return{
 export function items(data){
     let BASE_URL = 'http://localhost:9000/api/pokemon/items'
     return dispatch => {
-        
+        dispatch(setPokemon(false))
+        dispatch(setBerries(false))
+        dispatch(setEvolution(false))
+        dispatch(setGames(false))
+        dispatch(setLocations(false))
+        dispatch(setItems(false))
+        dispatch(setNatures(false))
+        dispatch(setMoves(false))
     dispatch(setPokemonLoading('loading'))
     return axios.post(BASE_URL,data).then(res => {
       const information = res.data;
@@ -302,7 +358,14 @@ return{
 export function games(data){
     let BASE_URL = 'http://localhost:9000/api/pokemon/games'
     return dispatch => {
-        
+        dispatch(setPokemon(false))
+        dispatch(setBerries(false))
+        dispatch(setEvolution(false))
+        dispatch(setGames(false))
+        dispatch(setLocations(false))
+        dispatch(setItems(false))
+        dispatch(setNatures(false))
+        dispatch(setMoves(false))
      dispatch(setPokemonLoading('loading'))
     return axios.post(BASE_URL,data).then(res => {
       const information = res.data;
@@ -342,7 +405,14 @@ return{
 export function locations(data){
     let BASE_URL = 'http://localhost:9000/api/pokemon/locations'
     return dispatch => {
-        
+        dispatch(setPokemon(false))
+        dispatch(setBerries(false))
+        dispatch(setEvolution(false))
+        dispatch(setGames(false))
+        dispatch(setLocations(false))
+        dispatch(setItems(false))
+        dispatch(setNatures(false))
+        dispatch(setMoves(false))
     dispatch(setPokemonLoading('loading'))
     return axios.post(BASE_URL,data).then(res => {
       const information = res.data;
