@@ -19,13 +19,14 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import { compose } from 'redux';
+import '../styles/card.css'
 
 const styles = theme => ({
   card: {
     maxWidth: 400,
   },
   media: {
-    height: 0,
+    height: 50,
     paddingTop: '56.25%', // 16:9
   },
   actions: {
@@ -75,10 +76,10 @@ class RecipeReviewCard extends React.Component {
             title={this.props.title}
             subheader={this.props.subHeader}
           />
-          <CardMedia
+          <CardMedia id="size"
             className={classes.media}
             image={this.props.cardMedia}
-            title="Contemplative Reptile"
+            title="Pokemon"
           />
           <CardContent>
             <Typography component="p">

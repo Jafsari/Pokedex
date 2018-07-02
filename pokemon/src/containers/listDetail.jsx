@@ -8,7 +8,10 @@ import berryImage from '../pics/pokemon-berry.png';
 import nature from '../pics/nature.gif';
 import map from '../pics/region.png';
 import charizard from '../pics/charizard-x.gif'
-import berry from '../pics/pikach-fruit.gif'
+import berry from '../pics/pikach-fruit.gif';
+import PokeSprite from 'react-poke-sprites';
+import sprite from '../components/sprite.jsx';
+import axios from 'axios';
 
 
 class ListDetail extends Component{
@@ -22,11 +25,12 @@ class ListDetail extends Component{
              <Progress /> 
              </div>
         }
-        console.log(this.props.effect)
-        console.log(this.props.pokemon)
         if (this.props.pokemon && this.props.effect){
-            console.log('hi')
-            var pokemon = this.props.pokemon.types.map((poke,index) => {
+            const pokemon = this.props.pokemon.name
+            console.log(media)
+            const picture = this.props.pokemon.sprites.front_default
+            const media = `http://www.pokestadium.com/sprites/xy/${pokemon}-2.gif`
+             var pokemon = this.props.pokemon.types.map((poke,index) => {
                 return (
                   {poke}.poke.type.name.charAt(0).toUpperCase() + {poke}.poke.type.name.slice(1)
                 )
@@ -47,6 +51,7 @@ class ListDetail extends Component{
                 <div>{this.props.effect.effect_entries[0].effect} </div>
             ));
            info = 
+           
            <span className='center'>
                 <Card
                 subHeader = {pokemon}
@@ -55,7 +60,7 @@ class ListDetail extends Component{
                 title = {this.props.pokemon.name.charAt(0).toUpperCase() + this.props.pokemon.name.slice(1)}
                 cardDescription1 = {this.props.effect.effect_entries[0].effect}
                 cardDescription2 = {this.props.effect.effect_entries[0].short_effect}
-                cardMedia = {this.props.pokemon.sprites.front_default}
+                cardMedia = {media}
                 />
           </span>
         }
