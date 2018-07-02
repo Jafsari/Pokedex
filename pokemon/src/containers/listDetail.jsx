@@ -5,9 +5,10 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import '../styles/listDetail.css';
 import berryImage from '../pics/pokemon-berry.png';
-import nature from '../pics/poke-ball.png';
+import nature from '../pics/nature.gif';
 import map from '../pics/region.png';
-import charz from '../pics/charz.png';
+import charizard from '../pics/charizard-x.gif'
+import berry from '../pics/pikach-fruit.gif'
 
 
 class ListDetail extends Component{
@@ -21,7 +22,10 @@ class ListDetail extends Component{
              <Progress /> 
              </div>
         }
+        console.log(this.props.effect)
+        console.log(this.props.pokemon)
         if (this.props.pokemon && this.props.effect){
+            console.log('hi')
             var pokemon = this.props.pokemon.types.map((poke,index) => {
                 return (
                   {poke}.poke.type.name.charAt(0).toUpperCase() + {poke}.poke.type.name.slice(1)
@@ -55,7 +59,7 @@ class ListDetail extends Component{
                 />
           </span>
         }
-       if (this.props.berry){
+       if (this.props.berry && this.props.data !== 'loading'){
            var berrysubHeader = 'Natural Power' + ' ' + this.props.berry.natural_gift_power
            var cardDescription1 = "Natural Type" + " " + this.props.berry.natural_gift_type.name.charAt(0).toUpperCase() + this.props.berry.natural_gift_type.name.slice(1)
            var cardDescription2 = "Max Harvest" + " " + this.props.berry.max_harvest
@@ -64,7 +68,7 @@ class ListDetail extends Component{
            <span className='center'>
            <Card 
            title={this.props.berry.name.charAt(0).toUpperCase() + this.props.berry.name.slice(1)}
-           cardMedia = {berryImage}
+           cardMedia = {berry}
            Character = {this.props.berry.name[0].toUpperCase()}
            subHeader = {berrysubHeader}
            cardContent = {this.props.berry.firmness.name.charAt(0).toUpperCase() + this.props.berry.firmness.name.slice(1)}
@@ -74,7 +78,7 @@ class ListDetail extends Component{
            />
      </span>
        }
-       if (this.props.item){
+       if (this.props.item && this.props.data !== 'loading'){
         const title = this.props.item.name.charAt(0).toUpperCase() + this.props.item.name.slice(1)
         const character = this.props.item.name[0].toUpperCase()
         const cardDescription1 = this.props.item.effect_entries[0].effect
@@ -95,7 +99,7 @@ class ListDetail extends Component{
         />
   </span>
        }
-       if (this.props.nature){
+       if (this.props.nature && this.props.data !== 'loading'){
            console.log(this.props.nature)
            const title = this.props.nature.name.charAt(0).toUpperCase() + this.props.nature.name.slice(1)
            const character = this.props.nature.name[0].toUpperCase()
@@ -119,7 +123,7 @@ class ListDetail extends Component{
         />
   </span>
        }
-       if (this.props.region){
+       if (this.props.region && this.props.data !== 'loading'){
         const title = this.props.region.name.charAt(0).toUpperCase() + this.props.region.name.slice(1)
         const character = this.props.region.name[0].toUpperCase()
         const cardDescription1 = this.props.region.descriptions[2].description
@@ -147,7 +151,7 @@ class ListDetail extends Component{
      />
 </span>
        }
-    if (this.props.move){
+    if (this.props.move && this.props.data !== 'loading'){
     const title = this.props.move.name.charAt(0).toUpperCase() + this.props.move.name.slice(1)
     const character = this.props.move.type.name[0].toUpperCase()
     const subHeader = this.props.move.type.name.charAt(0).toUpperCase() + this.props.move.type.name.slice(1)
@@ -160,7 +164,7 @@ class ListDetail extends Component{
      <span className='center'>
      <Card 
      title={title}
-     cardMedia={charz}
+     cardMedia={charizard}
      Character={character}
      subHeader={subHeader}
      cardContent 

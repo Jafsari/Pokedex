@@ -29,6 +29,7 @@ const reduxAPIRequest = (data,route,action1,action2) => {
     }
 }
 
+
 /*       POKEMON       */
 export function search(data){
     let BASE_URL = 'http://localhost:9000/api/pokemon'
@@ -70,10 +71,9 @@ export function search(data){
   export function ability(data){
     let BASE_URL = 'http://localhost:9000/api/pokemon/ability'
     return dispatch => {
-    dispatch(setPokemonLoading('loading'))
     return axios.post(BASE_URL,data).then(res => {
       const information = res.data;
-        dispatch(setAbility(information))
+    dispatch(setAbility(information))
      }).catch(e => {
       console.log(e)
       return dispatch(setAbilityFail('Done'))
@@ -107,11 +107,12 @@ export function abilityLOADING(information){
 export function berries(data){
     let BASE_URL = 'http://localhost:9000/api/pokemon/berries'
     return dispatch => {
+    
     dispatch(setPokemonLoading('loading'))
     return axios.post(BASE_URL,data).then(res => {
       const information = res.data;
-      
-        dispatch(setBerries(information))
+      dispatch(setBerries(information))
+      dispatch(setPokemonLoading('Finished'))
      }).catch(e => {
       console.log(e)
       return dispatch(setBerriesFail('Done'))
@@ -145,10 +146,12 @@ export function setBerriesFail(information){
 export function moves(data){
     let BASE_URL = 'http://localhost:9000/api/pokemon/moves'
     return dispatch => {
+        
      dispatch(setPokemonLoading('loading'))
     return axios.post(BASE_URL,data).then(res => {
       const information = res.data;
         dispatch(setMoves(information))
+        dispatch(setPokemonLoading('Finished'))
      }).catch(e => {
       console.log(e)
       return dispatch(setmovesFail('Done'))
@@ -182,10 +185,12 @@ return{
 export function evolutions(data){
     let BASE_URL = 'http://localhost:9000/api/pokemon/evolution'
     return dispatch => {
+        
     dispatch(setPokemonLoading('loading'))
     return axios.post(BASE_URL,data).then(res => {
       const information = res.data;
         dispatch(setEvolution(information))
+        dispatch(setPokemonLoading('Finished'))
      }).catch(e => {
       console.log(e)
       return dispatch(setevolutionFail('Done'))
@@ -219,10 +224,12 @@ return{
 export function natures(data){
     let BASE_URL = 'http://localhost:9000/api/pokemon/natures'
     return dispatch => {
+        
     dispatch(setPokemonLoading('loading'))
     return axios.post(BASE_URL,data).then(res => {
       const information = res.data;
         dispatch(setNatures(information))
+        dispatch(setPokemonLoading('Finished'))
      }).catch(e => {
       console.log(e)
       return dispatch(setnaturesFail('Done'))
@@ -256,10 +263,12 @@ return{
 export function items(data){
     let BASE_URL = 'http://localhost:9000/api/pokemon/items'
     return dispatch => {
+        
     dispatch(setPokemonLoading('loading'))
     return axios.post(BASE_URL,data).then(res => {
       const information = res.data;
         dispatch(setItems(information))
+        dispatch(setPokemonLoading('Finished'))
      }).catch(e => {
       console.log(e)
       return dispatch(setitemsFail('Done'))
@@ -293,10 +302,12 @@ return{
 export function games(data){
     let BASE_URL = 'http://localhost:9000/api/pokemon/games'
     return dispatch => {
+        
      dispatch(setPokemonLoading('loading'))
     return axios.post(BASE_URL,data).then(res => {
       const information = res.data;
         dispatch(setGames(information))
+        dispatch(setPokemonLoading('Finished'))
      }).catch(e => {
       console.log(e)
       return dispatch(setgamesFail('Done'))
@@ -331,10 +342,12 @@ return{
 export function locations(data){
     let BASE_URL = 'http://localhost:9000/api/pokemon/locations'
     return dispatch => {
+        
     dispatch(setPokemonLoading('loading'))
     return axios.post(BASE_URL,data).then(res => {
       const information = res.data;
         dispatch(setLocations(information))
+        dispatch(setPokemonLoading('Finished'))
      }).catch(e => {
       console.log(e)
       return dispatch(setlocationsFail('Done'))
