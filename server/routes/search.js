@@ -1,20 +1,33 @@
 const express = require('express');
 const router = express.Router();
+const pokemonGif = require('pokemon-gif');
 var Pokedex = require('pokedex-promise-v2');
 var P = new Pokedex();
 
 
 
 router.post('/', (req,res) => {
-  console.log(req.body.Pokemon)
+  console.log(req.body)
   const { Pokemon } = req.body
     P.getPokemonByName(`${Pokemon}`) 
     .then(function(response) {
+      console.log(response)
       return res.json(response);
-    })
-    .catch(function(error) {
+    }).catch(function(error) {
       return res.json('There was an ERROR: ', error);
     });
+    
+});
+
+router.post('/sprite', (req,res) => {
+  console.log(req.body)
+    pokemonGif('pikachu').then(function(response) {
+      console.log(response)
+      return res.json(response);
+    }).catch(function(error) {
+      return res.json('There was an ERROR: ', error);
+    });
+    
 });
 
 router.post('/ability',(req,res) => {
