@@ -27,9 +27,8 @@ class ListDetail extends Component{
         }
         if (this.props.pokemon && this.props.effect){
             const pokemon = this.props.pokemon.name
-            console.log(media)
             const picture = this.props.pokemon.sprites.front_default
-            const media = `http://www.pokestadium.com/sprites/xy/${pokemon}-2.gif`
+            const media = `http://www.pokestadium.com/sprites/xy/${pokemon}.gif`
              var pokemon = this.props.pokemon.types.map((poke,index) => {
                 return (
                   {poke}.poke.type.name.charAt(0).toUpperCase() + {poke}.poke.type.name.slice(1)
