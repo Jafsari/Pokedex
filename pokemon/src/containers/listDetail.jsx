@@ -34,12 +34,9 @@ class ListDetail extends Component{
             })
             var stats = this.props.pokemon.stats.map((stat,index) => {
                 return (
-                   {stat}.stat.stat.name,{stat}.stat.base_stat
-                )
-            })
-            var answer = stats.map((info,index) => {
-                return (
-                    {info}
+                    <div>
+                   <strong>{stat.stat.name}</strong>:{stat.base_stat}
+                   </div>
                 )
             })
             var check =  (this.props.effect.effect_entries[0] ? (
@@ -58,6 +55,7 @@ class ListDetail extends Component{
                 cardDescription1 = {this.props.effect.effect_entries[0].effect}
                 cardDescription2 = {this.props.effect.effect_entries[0].short_effect}
                 cardMedia = {media}
+                summary={stats}
                 />
           </span>
         }
@@ -178,6 +176,39 @@ class ListDetail extends Component{
      />
 </span>
     }
+    if (this.props.evolution && this.props.pokemon && this.props.data !== 'loading'){
+        const pre = this.props.evolution.chain.species.name.charAt(0).toUpperCase() + this.props.evolution.chain.species.name.slice(1)
+        const pokemon = this.props.evolution.chain.evolves_to[0].species.name.charAt(0).toUpperCase() + this.props.evolution.chain.evolves_to[0].species.name.slice(1)
+        const character = this.props.evolution.chain.evolves_to[0].species.name[0].toUpperCase()
+        const media = `http://www.pokestadium.com/sprites/xy/${this.props.evolution.chain.evolves_to[0].species.name}.gif`
+        const cardDescription1 = `${pre} evolves into ${pokemon}`
+        var type = this.props.pokemon.types.map((poke,index) => {
+            return (
+              {poke}.poke.type.name.charAt(0).toUpperCase() + {poke}.poke.type.name.slice(1)
+            )
+        })
+        var stats = this.props.pokemon.stats.map((stat,index) => {
+            return (
+                <div>
+               <strong>{stat.stat.name}</strong>:{stat.base_stat}
+               </div>
+            )
+        })
+
+     info = 
+     <span className='center'>
+     <Card 
+     title = {pokemon}
+     cardMedia ={media}
+     Character={character}
+     subHeader={type}
+     cardContent 
+     cardDescription1={cardDescription1}
+     cardDescription2
+     summary={stats}
+     />
+</span>
+    }
 
 return (
     <div >
@@ -197,7 +228,8 @@ const mapStateToProps = (state) => {
       item: state.item.items,
       nature: state.natures.natures,
       region: state.games.games,
-      move: state.moves.moves
+      move: state.moves.moves,
+      evolution: state.evolution.evolutions
       };
   };
   

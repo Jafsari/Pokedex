@@ -46,7 +46,6 @@ class TextFields extends React.Component {
 
  handleRequest = (e) => {
      e.preventDefault();
-    //  APIRequest(this.props.placeholder,this.state.Search);
      if (this.props.placeholder === 'Search Pokemon'){
     this.props.search({Pokemon:this.state.Search.toLowerCase()}).then((response) => {
         this.setState({Search:""})
@@ -103,8 +102,8 @@ class TextFields extends React.Component {
     this.props.evolutions({Pokemon:this.state.Search.toLowerCase()}).then((response) => {
         this.setState({Search:""})
     }).then(() => {
-        this.props.search({Pokemon:this.props.pokemon.name})
-    })
+      this.props.search({Pokemon:this.props.evolution.chain.evolves_to[0].species.name})
+  })
     .catch((error => {
         this.setState({Search:""})
     }))
@@ -145,7 +144,8 @@ TextFields.propTypes = {
 
 const mapStateToProps = (state) => { 
     return { 
-      pokemon:state.search.pokemon
+      pokemon:state.search.pokemon,
+      evolution: state.evolution.evolutions
       };
   };
   

@@ -68,7 +68,9 @@ router.post('/natures',(req,res) => {
 })
 
 router.post('/evolution',(req,res) => {
-  P.getEvolutionChainById(1)
+  console.log(req.body)
+  const { Pokemon } = req.body
+  P.getEvolutionChainById(Pokemon)
     .then(function(response) {
       console.log(response);
       return res.json(response)
