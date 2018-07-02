@@ -1,14 +1,14 @@
 import axios from 'axios';
 import { 
     SET_POKEMON, SET_POKEMON_LOADING, SET_POKEMON_FAIL, // Pokemon
-    SET_ABILITY, SET_ABILITY_FAIL, // Ability
-    SET_BERRIES_FAIL, SET_BERRIES, BERRIES_CONNECT, //Berries
-    SET_MOVES_FAIL, SET_MOVES, MOVES_CONNECT, // Moves
-    SET_EVOLUTIONS_FAIL, SET_EVOLUTIONS, EVOLUTIONS_CONNECT, //Evolution
-    SET_NATURES_FAIL, SET_NATURES, NATURES_CONNECT, // Encounters
-    SET_ITEMS_FAIL, SET_ITEMS, ITEMS_CONNECT, // Items
-    SET_GAMES_FAIL, SET_GAMES, GAMES_CONNECT, // Games
-    SET_LOCATIONS_FAIL, SET_LOCATIONS, LOCATIONS_CONNECT // Locations
+    SET_ABILITY, SET_ABILITY_FAIL, SET_ABILITIES_LOADING, // Ability
+    SET_BERRIES_FAIL, SET_BERRIES, SET_BERRIES_LOADING, //Berries
+    SET_MOVES_FAIL, SET_MOVES, SET_MOVES_LOADING, // Moves
+    SET_EVOLUTIONS_FAIL, SET_EVOLUTIONS, SET_EVOLUTIONS_LOADING, //Evolution
+    SET_NATURES_FAIL, SET_NATURES, SET_NATURES_LOADING, // Encounters
+    SET_ITEMS_FAIL, SET_ITEMS, SET_ITEMS_LOADING, // Items
+    SET_GAMES_FAIL, SET_GAMES, SET_GAMES_LOADING, // Games
+    SET_LOCATIONS_FAIL, SET_LOCATIONS, SET_LOCATIONS_LOADING // Locations
  } from './types.js'
 
 
@@ -70,6 +70,7 @@ export function search(data){
   export function ability(data){
     let BASE_URL = 'http://localhost:9000/api/pokemon/ability'
     return dispatch => {
+    dispatch(setPokemonLoading('loading'))
     return axios.post(BASE_URL,data).then(res => {
       const information = res.data;
         dispatch(setAbility(information))
@@ -93,14 +94,23 @@ export function search(data){
         information
     }
 }
+export function abilityLOADING(information){
+    return{
+        type:SET_ABILITIES_LOADING,
+        information
+    }
+}
+
 
 /*     BERRIES      */
 
 export function berries(data){
     let BASE_URL = 'http://localhost:9000/api/pokemon/berries'
     return dispatch => {
+    dispatch(setPokemonLoading('loading'))
     return axios.post(BASE_URL,data).then(res => {
       const information = res.data;
+      
         dispatch(setBerries(information))
      }).catch(e => {
       console.log(e)
@@ -115,9 +125,9 @@ export function berries(data){
         information
     }
 }
-  export function berriesConnect(information){
+  export function berriesLOADING(information){
       return{
-          type:BERRIES_CONNECT,
+          type:SET_BERRIES_LOADING,
           information
       }
   }
@@ -135,6 +145,7 @@ export function setBerriesFail(information){
 export function moves(data){
     let BASE_URL = 'http://localhost:9000/api/pokemon/moves'
     return dispatch => {
+     dispatch(setPokemonLoading('loading'))
     return axios.post(BASE_URL,data).then(res => {
       const information = res.data;
         dispatch(setMoves(information))
@@ -152,9 +163,9 @@ export function moves(data){
     }
 }
 
-  export function movesConnect(information){
+  export function movesLOADING(information){
     return{
-        type:MOVES_CONNECT,
+        type:SET_MOVES_LOADING,
         information
     }
 }
@@ -171,6 +182,7 @@ return{
 export function evolutions(data){
     let BASE_URL = 'http://localhost:9000/api/pokemon/evolution'
     return dispatch => {
+    dispatch(setPokemonLoading('loading'))
     return axios.post(BASE_URL,data).then(res => {
       const information = res.data;
         dispatch(setEvolution(information))
@@ -188,9 +200,9 @@ export function evolutions(data){
     }
 }
 
-export function evolutionConnect(information){
+export function evolutionLOADING(information){
     return{
-        type:EVOLUTIONS_CONNECT,
+        type:SET_EVOLUTIONS_LOADING,
         information
     }
 }
@@ -207,6 +219,7 @@ return{
 export function natures(data){
     let BASE_URL = 'http://localhost:9000/api/pokemon/natures'
     return dispatch => {
+    dispatch(setPokemonLoading('loading'))
     return axios.post(BASE_URL,data).then(res => {
       const information = res.data;
         dispatch(setNatures(information))
@@ -224,9 +237,9 @@ export function natures(data){
     }
 }
 
-export function naturesConnect(information){
+export function naturesLOADING(information){
     return{
-        type:NATURES_CONNECT,
+        type:SET_NATURES_LOADING,
         information
     }
 }
@@ -243,6 +256,7 @@ return{
 export function items(data){
     let BASE_URL = 'http://localhost:9000/api/pokemon/items'
     return dispatch => {
+    dispatch(setPokemonLoading('loading'))
     return axios.post(BASE_URL,data).then(res => {
       const information = res.data;
         dispatch(setItems(information))
@@ -260,9 +274,9 @@ export function items(data){
     }
 }
 
-export function itemsConnect(information){
+export function itemsLOADING(information){
     return{
-        type:ITEMS_CONNECT,
+        type:SET_ITEMS_LOADING,
         information
     }
 }
@@ -279,6 +293,7 @@ return{
 export function games(data){
     let BASE_URL = 'http://localhost:9000/api/pokemon/games'
     return dispatch => {
+     dispatch(setPokemonLoading('loading'))
     return axios.post(BASE_URL,data).then(res => {
       const information = res.data;
         dispatch(setGames(information))
@@ -296,9 +311,9 @@ export function games(data){
     }
 }
 
-export function gamesConnect(information){
+export function gamesLOADING(information){
     return{
-        type:GAMES_CONNECT,
+        type:SET_GAMES_LOADING,
         information
     }
 }
@@ -316,6 +331,7 @@ return{
 export function locations(data){
     let BASE_URL = 'http://localhost:9000/api/pokemon/locations'
     return dispatch => {
+    dispatch(setPokemonLoading('loading'))
     return axios.post(BASE_URL,data).then(res => {
       const information = res.data;
         dispatch(setLocations(information))
@@ -333,9 +349,9 @@ export function locations(data){
     }
 }
 
-export function locationConnect(information){
+export function locationLOADING(information){
     return{
-        type:LOCATIONS_CONNECT,
+        type:SET_LOCATIONS_LOADING,
         information
     }
 }

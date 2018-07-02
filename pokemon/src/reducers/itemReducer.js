@@ -1,7 +1,8 @@
-import { SET_ITEMS, SET_ITEMS_FAIL } from '../actions/types'
+import { SET_ITEMS, SET_ITEMS_FAIL, SET_ITEMS_LOADING } from '../actions/types'
 
 const DEFAULT_STATE = {
-    items:false
+    items:false,
+    data:false
   };
   export default (state = DEFAULT_STATE, action) => {
     switch(action.type){
@@ -12,6 +13,10 @@ const DEFAULT_STATE = {
     case SET_ITEMS_FAIL:
     return{
     items:action.information
+    }
+    case SET_ITEMS_LOADING:
+    return{
+        data:action.information
     }
           default:
           return state;
