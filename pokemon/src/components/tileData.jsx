@@ -27,7 +27,6 @@ import {ic_landscape} from 'react-icons-kit/md/ic_landscape';
 import {ic_donut_small} from 'react-icons-kit/md/ic_donut_small';
 import '../styles/tileData.css';
 
-
 export const mailFolderListItems = (
   <div>
     <ListItem button component={Link} to="/berries"  >
@@ -56,6 +55,8 @@ export const mailFolderListItems = (
     </ListItem>
   </div>
 );
+
+
 
 export const otherMailFolderListItems = (
   <div>

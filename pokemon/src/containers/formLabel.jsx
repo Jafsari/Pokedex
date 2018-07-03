@@ -36,6 +36,16 @@ class TextFields extends React.Component {
         }
     }
 
+    componentDidMount(){
+      this.props.setPokemon(false)
+      this.props.setBerries(false)
+      this.props.setEvolution(false)
+      this.props.setGames(false)
+      this.props.setLocations(false)
+      this.props.setItems(false)
+      this.props.setNatures(false)
+      this.props.setMoves(false)
+    }
 
     handleChange = (e) => {
         this.setState({
@@ -113,6 +123,7 @@ class TextFields extends React.Component {
   render() {      
     const { classes } = this.props;
     return (
+      <div>
       <form className={classes.container} noValidate autoComplete="off" onSubmit={this.handleRequest}>
         <TextField
           id="full-width"
@@ -133,7 +144,8 @@ class TextFields extends React.Component {
            <span>
             <Icon icon={ic_search} />
             </span>
-      </form>
+      </form> 
+      </div>
     );
   }
 }

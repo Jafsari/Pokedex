@@ -5,3 +5,8 @@
     animation:fade-in 0.5s linear;
   }
   
+  #sizer{
+    background-repeat:no-repeat!important;
+    background-size:contain!important;
+    background-position:center!important;
+}

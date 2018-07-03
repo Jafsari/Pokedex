@@ -5,13 +5,14 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import '../styles/listDetail.css';
 import berryImage from '../pics/pokemon-berry.png';
-import nature from '../pics/nature.gif';
+import nature from '../pics/charizard-xx.gif';
 import map from '../pics/region.png';
 import charizard from '../pics/charizard-x.gif'
 import berry from '../pics/pikach-fruit.gif';
 import PokeSprite from 'react-poke-sprites';
 import sprite from '../components/sprite.jsx';
 import location from '../pics/location-red.gif'
+
 
 class ListDetail extends Component{
     constructor(props){
@@ -111,7 +112,7 @@ class ListDetail extends Component{
            const cardDescription4 = 'Likes_Flavor:'+ ' ' + this.props.nature.likes_flavor.name.charAt(0).toUpperCase() + this.props.nature.likes_flavor.name.slice(1)
         info = 
         <span className='center'>
-        <Card 
+        <Card id="sizer" 
         title={title}
         cardMedia={nature}
         Character={character}
@@ -223,7 +224,7 @@ class ListDetail extends Component{
         })
      info = 
      <span className='center'>
-     <Card 
+     <Card id ="size"
      title={title}
      cardMedia={location}
      Character={character}
