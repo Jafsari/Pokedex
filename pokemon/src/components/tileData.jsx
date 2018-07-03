@@ -12,31 +12,45 @@ import ReportIcon from '@material-ui/icons/Report';
 import {withRouter} from "react-router-dom";
 import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
+import { Icon } from 'react-icons-kit';
+import {u1F352} from 'react-icons-kit/noto_emoji_regular/u1F352';
+import {u1F452} from 'react-icons-kit/noto_emoji_regular/u1F452';
+import {sphere} from 'react-icons-kit/icomoon/sphere';
+import {globe} from 'react-icons-kit/entypo/globe';
+import {u1F525} from 'react-icons-kit/noto_emoji_regular/u1F525';
+import {androidStar} from 'react-icons-kit/ionicons/androidStar';
+import {flash} from 'react-icons-kit/ionicons/flash';
+import {ic_directions_bike} from 'react-icons-kit/md/ic_directions_bike';
+import {ic_wb_cloudy} from 'react-icons-kit/md/ic_wb_cloudy';
+import {fire} from 'react-icons-kit/icomoon/fire';
+import {ic_landscape} from 'react-icons-kit/md/ic_landscape';
+import {ic_donut_small} from 'react-icons-kit/md/ic_donut_small';
+import '../styles/tileData.css';
 
 
 export const mailFolderListItems = (
   <div>
     <ListItem button component={Link} to="/berries"  >
       <ListItemIcon>
-        <InboxIcon />
+      <Icon icon={u1F352} />
       </ListItemIcon>
       <ListItemText primary="Berries"  />
     </ListItem>
     <ListItem button component={Link} to="/evolutions">
       <ListItemIcon>
-        <StarIcon />
+      <Icon icon={androidStar} />
       </ListItemIcon>
       <ListItemText primary="Evolutions" />
     </ListItem>
     <ListItem button component={Link} to="/natures">
       <ListItemIcon>
-        <SendIcon />
+      <Icon icon={fire} />
       </ListItemIcon>
       <ListItemText primary="Natures" />
     </ListItem>
     <ListItem button component={Link} to="/items">
       <ListItemIcon>
-        <DraftsIcon />
+      <Icon className='rotate' icon={ic_donut_small} />
       </ListItemIcon>
       <ListItemText primary="Items" />
     </ListItem>
@@ -47,19 +61,19 @@ export const otherMailFolderListItems = (
   <div>
     <ListItem button component={Link} to="/regions">
       <ListItemIcon>
-        <MailIcon />
+      <Icon icon={ic_landscape} />
       </ListItemIcon>
       <ListItemText primary="Regions" />
     </ListItem>
     <ListItem button component={Link} to="/locations">
       <ListItemIcon>
-        <DeleteIcon />
+      <Icon icon={globe} />
       </ListItemIcon>
       <ListItemText primary="Locations" />
     </ListItem>
     <ListItem button component={Link} to="/moves">
       <ListItemIcon>
-        <ReportIcon />
+      <Icon icon={flash} />
       </ListItemIcon>
       <ListItemText primary='Moves' />
     </ListItem>
