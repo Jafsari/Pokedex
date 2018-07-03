@@ -11,7 +11,7 @@ import charizard from '../pics/charizard-x.gif'
 import berry from '../pics/pikach-fruit.gif';
 import PokeSprite from 'react-poke-sprites';
 import sprite from '../components/sprite.jsx';
-import location from '../pics/location-gif.gif'
+import location from '../pics/location-red.gif'
 
 class ListDetail extends Component{
     constructor(props){
@@ -216,7 +216,8 @@ class ListDetail extends Component{
         var stats = this.props.location.pokemon_encounters.map((pokemon,index) => {
             return (
                 <div>
-               <strong>{pokemon.pokemon.name}</strong>:Max Level - {pokemon.version_details[0].encounter_details[0].max_level}
+               <strong>{pokemon.pokemon.name.charAt(0).toUpperCase() + pokemon.pokemon.name.slice(1)}
+               </strong>:Max Level - {pokemon.version_details[0].encounter_details[0].max_level}
                </div>
             )
         })
