@@ -2,6 +2,11 @@
 
 This App is an app that's focused on creating a real life pokedex, that's efficient on both web and mobile platforms.
 
+Demo: https://desolate-gorge-40418.herokuapp.com/
+
+Try it out on Mobile or Web :)
+
+
 Desktop:
 
 ![screen shot 2018-06-28 at 4 13 41 am](https://user-images.githubusercontent.com/28635782/42031080-d24d6172-7a89-11e8-85b2-30a5c61d2e42.png)
