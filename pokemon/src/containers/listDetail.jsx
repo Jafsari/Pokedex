@@ -11,6 +11,7 @@ import charizard from '../pics/charizard-x.gif'
 import berry from '../pics/pikach-fruit.gif';
 import PokeSprite from 'react-poke-sprites';
 import sprite from '../components/sprite.jsx';
+import location from '../pics/location-gif.gif'
 
 class ListDetail extends Component{
     constructor(props){
@@ -209,12 +210,36 @@ class ListDetail extends Component{
      />
 </span>
     }
-
+    if (this.props.location && this.props.data  !== 'loading'){
+        const title = this.props.location.location.name.charAt(0).toUpperCase() + this.props.location.location.name.slice(1)
+        const character = this.props.location.location.name.charAt(0).toUpperCase()
+        var stats = this.props.location.pokemon_encounters.map((pokemon,index) => {
+            return (
+                <div>
+               <strong>{pokemon.pokemon.name}</strong>:Max Level - {pokemon.version_details[0].encounter_details[0].max_level}
+               </div>
+            )
+        })
+     info = 
+     <span className='center'>
+     <Card 
+     title={title}
+     cardMedia={location}
+     Character={character}
+     subHeader
+     cardContent 
+     cardDescription1
+     cardDescription2
+     summary={stats}
+     />
+</span>
+    }
 return (
     <div >
         {info}
     </div>
   );
+
 }
 }
 
@@ -229,7 +254,8 @@ const mapStateToProps = (state) => {
       nature: state.natures.natures,
       region: state.games.games,
       move: state.moves.moves,
-      evolution: state.evolution.evolutions
+      evolution: state.evolution.evolutions,
+      location:state.locations.locations
       };
   };
   

@@ -120,7 +120,9 @@ router.post('/moves',(req,res) => {
 })
 
 router.post('/locations',(req,res) => {
-  P.getLocationAreaByName("canalave-city-area")
+  console.log(req.body)
+  const { Location } = req.body
+  P.getLocationAreaByName(Location)
     .then(function(response) {
       console.log(response);
       return res.json(response)

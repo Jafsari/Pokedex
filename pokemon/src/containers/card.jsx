@@ -122,7 +122,7 @@ class RecipeReviewCard extends React.Component {
           <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
             <CardContent>
               <Typography paragraph variant="body2">
-                Characteristics
+                <strong>Characteristics</strong>
               </Typography>
 
               <Typography paragraph>
