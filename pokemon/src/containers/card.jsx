@@ -114,7 +114,7 @@ class RecipeReviewCard extends React.Component {
           </CardContent>
           <CardActions className={classes.actions} disableActionSpacing>
             <IconButton aria-label="Share">
-              <FacebookButton id='cursor' url={url} appId={FacebookAPI}>
+              <FacebookButton id='cursor' url={url} appId={FacebookAPI} sharer={true}>
               <Icon  icon={facebook} />
               {/* <FacebookCount url={url} /> */}
               </FacebookButton>

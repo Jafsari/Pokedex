@@ -1,6 +1,9 @@
 # Pokedex
 
+
 This App is an app that's focused on creating a real life pokedex, that's efficient on both web and mobile platforms.
+
+Built with ReactJS,Redux,Node,Express,Pokemon API, Pokemon-Stadium API
 
 Demo: https://desolate-gorge-40418.herokuapp.com/
 
@@ -9,11 +12,11 @@ Try it out on Mobile or Web :)
 
 Desktop:
 
-![screen shot 2018-06-28 at 4 13 41 am](https://user-images.githubusercontent.com/28635782/42031080-d24d6172-7a89-11e8-85b2-30a5c61d2e42.png)
+![screen shot 2018-07-04 at 2 12 14 am](https://user-images.githubusercontent.com/28635782/42268300-01976946-7f30-11e8-8a77-76a7504f715a.png)
 
 SideBar:
 
-![screen shot 2018-06-28 at 4 13 46 am](https://user-images.githubusercontent.com/28635782/42031083-d3f66c12-7a89-11e8-937b-6b562349eda0.png)
+![screen shot 2018-07-04 at 2 12 48 am](https://user-images.githubusercontent.com/28635782/42268315-067f1cec-7f30-11e8-8f17-8c8dbcdc7c91.png)
 
 
 About:
@@ -22,7 +25,7 @@ About:
 
 
 Find Pokemon:
-![screen shot 2018-07-02 at 12 34 56 am](https://user-images.githubusercontent.com/28635782/42150817-d2254a1c-7d8f-11e8-8481-ae477802a55d.png)
+![screen shot 2018-07-04 at 2 12 22 am](https://user-images.githubusercontent.com/28635782/42268308-03fb64f8-7f30-11e8-863b-2a72d4c42a67.png)
 
 Mobile:
 
