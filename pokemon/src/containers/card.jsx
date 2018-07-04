@@ -19,7 +19,17 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import { compose } from 'redux';
-import '../styles/card.css'
+import '../styles/card.css';
+import { FacebookButton, FacebookCount, PinterestButton, RedditButton, GooglePlusButton } from "react-social";
+import {facebook} from 'react-icons-kit/entypo/facebook';
+import { Icon } from 'react-icons-kit';
+import {pinterest} from 'react-icons-kit/entypo/pinterest';
+import {tumblr} from 'react-icons-kit/entypo/tumblr';
+import {googlePlus} from 'react-icons-kit/entypo/googlePlus';
+import {redditAlien} from 'react-icons-kit/fa/redditAlien';
+import { FacebookAPI, PinterestAPI, GooglePlusAPI} from '../config.js'
+
+
 
 const styles = theme => ({
   card: {
@@ -58,6 +68,7 @@ class RecipeReviewCard extends React.Component {
     this.setState(state => ({ expanded: !state.expanded }));
   };
   render() {
+    let url = "https://desolate-gorge-40418.herokuapp.com";
     const { classes } = this.props;
     return (
       <div>
@@ -102,12 +113,24 @@ class RecipeReviewCard extends React.Component {
             </Typography>
           </CardContent>
           <CardActions className={classes.actions} disableActionSpacing>
-            <IconButton aria-label="Add to favorites">
-              <FavoriteIcon />
-            </IconButton>
             <IconButton aria-label="Share">
-              <ShareIcon />
-            </IconButton>
+              <FacebookButton id='cursor' url={url} appId={FacebookAPI}>
+              <Icon  icon={facebook} />
+              {/* <FacebookCount url={url} /> */}
+              </FacebookButton>
+             </IconButton>
+             <IconButton aria-label="Share">
+              <PinterestButton id='cursor' url={url} appId={PinterestAPI}>
+              <Icon  icon={pinterest} />
+              {/* <pinterestCount url={url} /> */}
+              </PinterestButton>
+             </IconButton>
+             <IconButton aria-label="Share">
+              <GooglePlusButton id='cursor' url={url} appId={GooglePlusAPI}>
+              <Icon  icon={googlePlus} />
+              {/* <FacebookCount url={url} /> */}
+              </GooglePlusButton>
+             </IconButton>
             <IconButton
               className={classnames(classes.expand, {
                 [classes.expandOpen]: this.state.expanded,

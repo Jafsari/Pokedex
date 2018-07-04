@@ -19,6 +19,7 @@
     "react-poke-sprites": "0.0.6",
     "react-redux": "^5.0.7",
     "react-scripts": "1.1.4",
+    "react-social": "^1.10.0",
     "react-strap": "0.0.1",
     "reactstrap": "^6.1.0",
     "redux": "^4.0.0",

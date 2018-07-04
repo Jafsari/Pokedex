@@ -19,7 +19,7 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-      <div>
+      <div className="walllpaper">
         <Switch>
         <Route exact path='/' component={Landing} />
         <Route exact path="/berries" component={Berries} />
