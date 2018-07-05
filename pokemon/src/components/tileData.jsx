@@ -78,5 +78,12 @@ export const otherMailFolderListItems = (
       </ListItemIcon>
       <ListItemText primary='Moves' />
     </ListItem>
+    <ListItem button component={Link} to="/streams">
+      <ListItemIcon>
+      <Icon icon={flash} />
+      </ListItemIcon>
+      <ListItemText primary='Watch Streams' />
+    </ListItem>
+    
   </div>
 );

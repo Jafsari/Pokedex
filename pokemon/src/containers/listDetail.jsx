@@ -212,6 +212,7 @@ class ListDetail extends Component{
 </span>
     }
     if (this.props.location && this.props.data  !== 'loading'){
+        console.log('hi')
         const title = this.props.location.location.name.charAt(0).toUpperCase() + this.props.location.location.name.slice(1)
         const character = this.props.location.location.name.charAt(0).toUpperCase()
         var stats = this.props.location.pokemon_encounters.map((pokemon,index) => {
@@ -234,7 +235,24 @@ class ListDetail extends Component{
      cardDescription2
      summary={stats}
      />
+
 </span>
+    }
+
+    if(this.props.video){
+        info =
+        <span className='center'>
+        <div className="responsive">
+        <iframe 
+    src={`http://player.twitch.tv/?channel=${this.props.video}&muted=true`}
+    height= "400"
+    width = "600"
+    frameborder="0"
+    scrolling="no"
+    allowfullscreen="true">
+    </iframe>
+    </div>
+    </span>
     }
 return (
     <div >
@@ -257,7 +275,8 @@ const mapStateToProps = (state) => {
       region: state.games.games,
       move: state.moves.moves,
       evolution: state.evolution.evolutions,
-      location:state.locations.locations
+      location:state.locations.locations,
+      video:state.stream.stream
       };
   };
   

@@ -12,13 +12,14 @@ import Items from './components/items.jsx';
 import Locations from './components/locations.jsx';
 import Natures from './components/natures.jsx';
 import Moves from './components/moves.jsx';
-
+import Streams from './components/stream.jsx';
 
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
+      <div className='container'>
       <div className="walllpaper">
         <Switch>
         <Route exact path='/' component={Landing} />
@@ -29,7 +30,9 @@ class App extends Component {
         <Route exact path="/locations" component={Locations} />
         <Route exact path="/natures" component={Natures} />
         <Route exact path="/moves" component={Moves} />
+        <Route exact path="/streams" component={Streams} />
         </Switch>
+      </div>
       </div>
       </BrowserRouter>
     )

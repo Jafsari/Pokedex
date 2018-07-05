@@ -118,7 +118,10 @@ class TextFields extends React.Component {
         this.setState({Search:""})
     }))
   }
+  if (this.props.placeholder ==='Search Streams'){
+    this.props.setStream(this.state.Search)
   }
+}
 
   render() {      
     const { classes } = this.props;

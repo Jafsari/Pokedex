@@ -8,7 +8,8 @@ import {
     SET_NATURES_FAIL, SET_NATURES, SET_NATURES_LOADING, // Encounters
     SET_ITEMS_FAIL, SET_ITEMS, SET_ITEMS_LOADING, // Items
     SET_GAMES_FAIL, SET_GAMES, SET_GAMES_LOADING, // Games
-    SET_LOCATIONS_FAIL, SET_LOCATIONS, SET_LOCATIONS_LOADING // Locations
+    SET_LOCATIONS_FAIL, SET_LOCATIONS, SET_LOCATIONS_LOADING, // Locations
+    SET_STREAM //Streams
  } from './types.js'
 
 
@@ -28,6 +29,7 @@ const reduxAPIRequest = (data,route,action1,action2) => {
      })
     }
 }
+
 
 const reset = () => {
     return dispatch => {
@@ -378,6 +380,16 @@ return{
     type:SET_LOCATIONS_FAIL,
     information
 }
+}
+
+
+/* STREAM */
+
+export function setStream(information){
+    return{
+        type:SET_STREAM,
+        information
+    }
 }
 
 

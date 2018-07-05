@@ -7,7 +7,8 @@ import evolution from './evolutionReducer';
 import games from './gamesReducer';
 import item from './itemReducer';
 import locations from './locationsReducer';
-import moves from './movesReducer'
+import moves from './movesReducer';
+import stream from './streamReducer.js'
 export default combineReducers({
 search,
 power,
@@ -17,5 +18,6 @@ evolution,
 games,
 item,
 locations,
-moves
+moves,
+stream
 });
