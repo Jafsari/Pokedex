@@ -244,7 +244,7 @@ class ListDetail extends Component{
         <span className='center'>
         <div className="responsive">
         <iframe 
-    src={`http://player.twitch.tv/?channel=${this.props.video}&muted=true`}
+    src={`https://player.twitch.tv/?channel=${this.props.video}&muted=true`}
     height= "400"
     width = "600"
     frameborder="0"

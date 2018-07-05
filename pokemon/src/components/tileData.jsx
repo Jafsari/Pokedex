@@ -83,7 +83,7 @@ export const otherMailFolderListItems = (
       <ListItemIcon>
       <Icon icon={twitch} />
       </ListItemIcon>
-      <ListItemText primary='Watch Streams' />
+      <ListItemText primary='Twitch' />
     </ListItem>
     
   </div>

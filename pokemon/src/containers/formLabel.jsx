@@ -45,6 +45,7 @@ class TextFields extends React.Component {
       this.props.setItems(false)
       this.props.setNatures(false)
       this.props.setMoves(false)
+      this.props.setStream(false)
     }
 
     handleChange = (e) => {
@@ -120,6 +121,7 @@ class TextFields extends React.Component {
   }
   if (this.props.placeholder ==='Search Streams'){
     this.props.setStream(this.state.Search)
+    this.setState({Search:" "})
   }
 }
 

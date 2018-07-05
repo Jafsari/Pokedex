@@ -16,7 +16,7 @@ Desktop:
 
 SideBar:
 
-![screen shot 2018-07-04 at 2 12 48 am](https://user-images.githubusercontent.com/28635782/42268315-067f1cec-7f30-11e8-8f17-8c8dbcdc7c91.png)
+![screen shot 2018-07-05 at 12 42 31 am](https://user-images.githubusercontent.com/28635782/42309135-9f08b65a-7fec-11e8-9f0a-5b7f0abe6cbb.png)
 
 
 About:
