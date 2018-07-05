@@ -18,4 +18,5 @@
         transform:scale(0.95);
         position:relative;
         bottom:40px;
+        overflow:visible;
 }

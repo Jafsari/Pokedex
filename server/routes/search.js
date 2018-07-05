@@ -8,8 +8,8 @@ var P = new Pokedex();
 
 router.post('/', (req,res) => {
   console.log(req.body)
-  const { Pokemon } = req.body
-    P.getPokemonByName(`${Pokemon}`) 
+  const Pokemon = req.body.Pokemon.replace(/[^0-9a-zA-Z]/g, '')
+    P.getPokemonByName(Pokemon) 
     .then(function(response) {
       console.log(response)
       return res.json(response);
@@ -32,8 +32,8 @@ router.post('/sprite', (req,res) => {
 
 router.post('/ability',(req,res) => {
   console.log(req.body)
-  const { Effect } = req.body
-  P.getAbilityByName(`${Effect}`)
+  const Effect = req.body.Effect.replace(/\s/g, '')
+  P.getAbilityByName(Effect)
   .then(function(response) {
     return res.json(response)
   })
@@ -44,7 +44,7 @@ router.post('/ability',(req,res) => {
 
 router.post('/berries',(req,res) => {
   console.log(req.body)
-  P.getBerryByName(req.body.Berries)
+  P.getBerryByName(req.body.Berries.replace(/[^0-9a-zA-Z]/g, ''))
   .then(function(response) {
     console.log(response);
     return res.json(response)
@@ -56,7 +56,7 @@ router.post('/berries',(req,res) => {
 
 router.post('/natures',(req,res) => {
   console.log(req.body)
-  const { Nature } = req.body
+  const Nature  = req.body.Nature.replace(/[^0-9a-zA-Z]/g, '')
   P.getNatureByName(Nature)
     .then(function(response) {
       console.log(response);
@@ -69,7 +69,7 @@ router.post('/natures',(req,res) => {
 
 router.post('/evolution',(req,res) => {
   console.log(req.body)
-  const { Pokemon } = req.body
+  const  Pokemon  = req.body.Pokemon.replace(/[^0-9a-zA-Z]/g, '')
   P.getEvolutionChainById(Pokemon)
     .then(function(response) {
       console.log(response);
@@ -82,7 +82,7 @@ router.post('/evolution',(req,res) => {
 
 router.post('/games',(req,res) => {
   console.log(req.body)
-  const { Game } = req.body
+  const  Game  = req.body.Game.replace(/[^0-9a-zA-Z]/g, '')
   P.getPokedexByName(Game)
     .then(function(response) {
       console.log(response);
@@ -95,7 +95,7 @@ router.post('/games',(req,res) => {
 
 router.post('/items',(req,res) => {
   console.log(req.body)
-  const { Item } = req.body
+  const  Item  = req.body.Item.replace(/\s/g, '')
   P.getItemByName(Item)
   .then(function(response) {
     console.log(response);
@@ -108,7 +108,7 @@ router.post('/items',(req,res) => {
 
 router.post('/moves',(req,res) => {
   console.log(req.body)
-  const { Moves } = req.body
+  const Moves  = req.body.Moves.replace(/[^0-9a-zA-Z]/g, '')
   P.getMoveByName(Moves)
   .then(function(response) {
     console.log(response);
@@ -121,7 +121,7 @@ router.post('/moves',(req,res) => {
 
 router.post('/locations',(req,res) => {
   console.log(req.body)
-  const { Location } = req.body
+  const  Location  = req.body.Location.replace(/[^0-9a-zA-Z]/g, '')
   P.getLocationAreaByName(Location)
     .then(function(response) {
       console.log(response);
