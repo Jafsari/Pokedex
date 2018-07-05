@@ -26,6 +26,7 @@ import {fire} from 'react-icons-kit/icomoon/fire';
 import {ic_landscape} from 'react-icons-kit/md/ic_landscape';
 import {ic_donut_small} from 'react-icons-kit/md/ic_donut_small';
 import '../styles/tileData.css';
+import {twitch} from 'react-icons-kit/icomoon/twitch';
 
 export const mailFolderListItems = (
   <div>
@@ -80,7 +81,7 @@ export const otherMailFolderListItems = (
     </ListItem>
     <ListItem button component={Link} to="/streams">
       <ListItemIcon>
-      <Icon icon={flash} />
+      <Icon icon={twitch} />
       </ListItemIcon>
       <ListItemText primary='Watch Streams' />
     </ListItem>
