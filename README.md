@@ -35,4 +35,6 @@ Mobile:
 
 ![screen shot 2018-06-28 at 1 57 50 am](https://user-images.githubusercontent.com/28635782/42024359-da28f55e-7a76-11e8-9966-23ef1482fc1c.png)
 
+![screen shot 2018-07-05 at 11 59 29 am](https://user-images.githubusercontent.com/28635782/42342568-4fa1662a-804b-11e8-95e6-44e83f04d821.png)
+
 

@@ -385,11 +385,17 @@ return{
 
 /* STREAM */
 
+export function setStreamLoading(){
+    return dispatch =>{
+        dispatch(setPokemonLoading('loading'))
+    }
+}
+
 export function setStream(information){
     return{
         type:SET_STREAM,
         information
-    }
+}
 }
 
 
