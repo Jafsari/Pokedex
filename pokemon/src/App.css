@@ -34,3 +34,10 @@
     background-size:contain;
     background-position:center;
 }
+
+@media screen and (max-height: 480px) {
+  .wallpaper {
+    background-image: none;
+  }
+}
+
