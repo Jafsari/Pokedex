@@ -7,11 +7,28 @@ import '../styles/listDetail.css';
 import berryImage from '../pics/pokemon-berry.png';
 import nature from '../pics/charizard-xx.gif';
 import map from '../pics/region.png';
-import charizard from '../pics/charizard-x.gif'
 import berry from '../pics/pikach-fruit.gif';
 import PokeSprite from 'react-poke-sprites';
 import sprite from '../components/sprite.jsx';
-import location from '../pics/location-red.gif'
+import location from '../pics/location-red.gif';
+import electric from '../pics/pikachu-electric.gif';
+import dragon from '../pics/dragon.gif';
+import fighting from '../pics/fighting.gif';
+import flying from '../pics/fighting.gif';
+import ground from '../pics/ground.gif';
+import ice from '../pics/ice.gif';
+import psychic from '../pics/psychic.gif';
+import water from '../pics/water-attack.gif';
+import dark from '../pics/dark.gif';
+import fairy from '../pics/fairy.gif';
+import grass from '../pics/grass-attack.gif';
+import ghost from '../pics/ghost.gif';
+import normal from '../pics/normal.gif';
+import rock from '../pics/rock.gif';
+import bug from '../pics/bug.gif';
+import steel from '../pics/steel.gif';
+import poison from '../pics/poison.gif';
+import fire from '../pics/charizard-x.gif';
 
 
 class ListDetail extends Component{
@@ -162,11 +179,72 @@ class ListDetail extends Component{
     const summary = 'Accuracy:' + ' ' + this.props.move.accuracy
     const summary2 = 'Power:' + ' ' + this.props.move.power
     const summary3 = 'PP:' + ' ' + this.props.move.pp
+    var cardMedia;
+    const media = () => {
+        switch(this.props.move.type.name){
+            case 'electric':
+            cardMedia = electric;
+            break;
+            case 'water':
+            cardMedia = water;
+            break;
+            case 'dragon':
+            cardMedia = dragon;
+            break;
+            case 'bug':
+            cardMedia = bug;
+            break;
+            case 'dark':
+            cardMedia = dark;
+            break;
+            case 'fairy':
+            cardMedia = fairy;
+            break;
+            case 'fighting':
+            cardMedia = fighting;
+            break;
+            case 'flying':
+            cardMedia = flying;
+            break;
+            case 'ghost':
+            cardMedia = ghost;
+            break;
+            case 'grass':
+            cardMedia = grass;
+            break;
+            case 'ground':
+            cardMedia = ground;
+            break;
+            case 'ice':
+            cardMedia = ice;
+            break;
+            case 'normal':
+            cardMedia = normal;
+            break;
+            case 'poison':
+            cardMedia = poison;
+            break;
+            case 'psychic':
+            cardMedia = psychic;
+            break;
+            case 'rock':
+            cardMedia = rock;
+            break;
+            case 'steel':
+            cardMedia = steel;
+            break;
+            case 'fire':
+            cardMedia = fire;
+        
+    }
+
+        return cardMedia;
+    }
      info = 
      <span className='center'>
      <Card 
      title={title}
-     cardMedia={charizard}
+     cardMedia={media()}
      Character={character}
      subHeader={subHeader}
      cardContent 

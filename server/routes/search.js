@@ -108,7 +108,7 @@ router.post('/items',(req,res) => {
 
 router.post('/moves',(req,res) => {
   console.log(req.body)
-  const Moves  = req.body.Moves.replace(/[^0-9a-zA-Z]/g, '')
+  const Moves  = req.body.Moves.replace(/\s/g, '')
   P.getMoveByName(Moves)
   .then(function(response) {
     console.log(response);

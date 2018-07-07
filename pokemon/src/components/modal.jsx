@@ -61,7 +61,7 @@ class SimpleModal extends React.Component {
               Pokedex
             </Typography>
             <Typography variant="subheading" id="simple-modal-description">
-              Welcome to the Pokedex! This is an application, that allows you to search for all the information in the Pokemon Universe!
+              Welcome to the Pokedex! This is an application, that allows you to search for all the information in the Pokemon Universe and watch Twitch Streams!
             </Typography>
           </div>
         </Modal>
