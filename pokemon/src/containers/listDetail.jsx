@@ -121,7 +121,7 @@ class ListDetail extends Component{
        if (this.props.card && this.props.data !== 'loading'){
            const Cards = this.props.card.map((cardz,index) => {
                return(
-                <img src ={cardz.imageUrl} alt ="" />
+                <img className ='grow' src ={cardz.imageUrl} alt ="" />
                )
            })
            const media = this.props.card[0].imageUrl
