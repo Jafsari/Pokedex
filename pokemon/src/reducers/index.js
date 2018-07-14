@@ -9,6 +9,7 @@ import item from './itemReducer';
 import locations from './locationsReducer';
 import moves from './movesReducer';
 import stream from './streamReducer.js'
+import card from './cardReducer.js'
 export default combineReducers({
 search,
 power,
@@ -17,6 +18,7 @@ natures,
 evolution,
 games,
 item,
+card,
 locations,
 moves,
 stream

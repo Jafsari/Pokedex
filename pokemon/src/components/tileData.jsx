@@ -54,6 +54,12 @@ export const mailFolderListItems = (
       </ListItemIcon>
       <ListItemText primary="Items" />
     </ListItem>
+    <ListItem button component={Link} to="/cards">
+      <ListItemIcon>
+      <Icon className='rotate' icon={ic_donut_small} />
+      </ListItemIcon>
+      <ListItemText primary="Cards" />
+    </ListItem>
   </div>
 );
 

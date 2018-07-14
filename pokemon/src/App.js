@@ -13,6 +13,8 @@ import Locations from './components/locations.jsx';
 import Natures from './components/natures.jsx';
 import Moves from './components/moves.jsx';
 import Streams from './components/stream.jsx';
+import Cards from './components/cards.jsx';
+
 
 
 class App extends Component {
@@ -27,6 +29,7 @@ class App extends Component {
         <Route exact path="/evolutions" component={Evolutions} />
         <Route exact path="/regions" component={Games} />
         <Route exact path="/items" component={Items} />
+        <Route exact path="/Cards" component={Cards} />
         <Route exact path="/locations" component={Locations} />
         <Route exact path="/natures" component={Natures} />
         <Route exact path="/moves" component={Moves} />

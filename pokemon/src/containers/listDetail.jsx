@@ -118,6 +118,23 @@ class ListDetail extends Component{
         />
   </span>
        }
+       if (this.props.card&& this.props.data !== 'loading'){
+           const Cards = this.props.card.map((cardz,index) => {
+               return(
+                <img src ={cardz.imageUrl} alt ="" />
+               )
+           })
+           const media = this.props.card[0].imageUrl
+     info = 
+        <span className='center'>
+        <div>
+            {Cards}
+        </div>
+           </span>
+     
+
+    }
+       
        if (this.props.nature && this.props.data !== 'loading'){
            console.log(this.props.nature)
            const title = this.props.nature.name.charAt(0).toUpperCase() + this.props.nature.name.slice(1)
@@ -354,7 +371,8 @@ const mapStateToProps = (state) => {
       move: state.moves.moves,
       evolution: state.evolution.evolutions,
       location:state.locations.locations,
-      video:state.stream.stream
+      video:state.stream.stream,
+      card:state.card.cards
       };
   };
   

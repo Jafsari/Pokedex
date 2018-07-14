@@ -27,6 +27,10 @@ About:
 Find Pokemon:
 ![screen shot 2018-07-04 at 2 12 22 am](https://user-images.githubusercontent.com/28635782/42268308-03fb64f8-7f30-11e8-863b-2a72d4c42a67.png)
 
+Cards: 
+
+![screen shot 2018-07-14 at 3 07 47 am](https://user-images.githubusercontent.com/28635782/42723481-61bdc1d6-8713-11e8-8e25-c9b7b8d6e6ff.png)
+
 Streams:
 
 ![screen shot 2018-07-05 at 1 06 23 am](https://user-images.githubusercontent.com/28635782/42310273-d61da35a-7fef-11e8-8e86-344ef9fc55f5.png)

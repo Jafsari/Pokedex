@@ -123,6 +123,13 @@ class TextFields extends React.Component {
     this.props.setStream(this.state.Search)
     this.setState({Search:" "})
   }
+  if (this.props.placeholder ==='Search Cards'){
+    this.props.cards({Cards:this.state.Search.toLowerCase()}).then((response) => {
+      this.setState({Search:""})
+    }).catch( error => {
+      this.setState({Search:""})
+    })
+  }
 }
 
   render() {      

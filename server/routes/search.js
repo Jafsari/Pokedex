@@ -3,6 +3,7 @@ const router = express.Router();
 const pokemonGif = require('pokemon-gif');
 var Pokedex = require('pokedex-promise-v2');
 var P = new Pokedex();
+const pokemon = require('pokemontcgsdk');
 
 
 
@@ -95,7 +96,7 @@ router.post('/games',(req,res) => {
 
 router.post('/items',(req,res) => {
   console.log(req.body)
-  const  Item  = req.body.Item.replace(/\s/g, '')
+  const Item  = req.body.Item.replace(/\s/g, '')
   P.getItemByName(Item)
   .then(function(response) {
     console.log(response);
@@ -104,6 +105,26 @@ router.post('/items',(req,res) => {
   .catch(function(error) {
     console.log('There was an ERROR: ', error);
   });
+})
+
+router.post('/cards',(req,res) => {
+  console.log(req.body)
+  const Cards = req.body.Cards.replace(/\s/g, '')
+  // pokemon.card.find('base1-4')
+  // .then(result => {
+  //     console.log(result.card.name) // "Charizard"
+  //     return res.json(result)
+  // })
+//   pokemon.card.where({ name:Cards, page: 10 })
+// .on('data', card => {
+//     console.log(card.name)
+//     return res.json(card)
+// })
+pokemon.card.where({ name:Cards})
+.then(cards => {
+    console.log(cards[0].name) // "M Sceptile-EX"
+    return res.json(cards)
+})
 })
 
 router.post('/moves',(req,res) => {

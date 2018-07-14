@@ -40,6 +40,11 @@ export const SET_ITEMS = "SET_ITEMS"
 export const SET_ITEMS_FAIL = "SET_ITEMS_FAIL"
 export const SET_ITEMS_LOADING ="ITEMS_LOADING"
 
+/* Cards */
+export const SET_CARDS = "SET_CARDS"
+export const SET_CARDS_FAIL = "SET_CARDS_FAIL"
+export const SET_CARDS_LOADING ="CARDS_LOADING"
+
 
 /* GAMES */
 export const SET_GAMES = "SET_GAMES"
