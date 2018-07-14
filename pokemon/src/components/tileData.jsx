@@ -27,6 +27,8 @@ import {ic_landscape} from 'react-icons-kit/md/ic_landscape';
 import {ic_donut_small} from 'react-icons-kit/md/ic_donut_small';
 import '../styles/tileData.css';
 import {twitch} from 'react-icons-kit/icomoon/twitch';
+import {basic_cards_diamonds} from 'react-icons-kit/linea/basic_cards_diamonds';
+
 
 export const mailFolderListItems = (
   <div>
@@ -56,7 +58,7 @@ export const mailFolderListItems = (
     </ListItem>
     <ListItem button component={Link} to="/cards">
       <ListItemIcon>
-      <Icon className='rotate' icon={ic_donut_small} />
+      <Icon icon={basic_cards_diamonds} />
       </ListItemIcon>
       <ListItemText primary="Cards" />
     </ListItem>

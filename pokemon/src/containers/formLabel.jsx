@@ -46,6 +46,7 @@ class TextFields extends React.Component {
       this.props.setNatures(false)
       this.props.setMoves(false)
       this.props.setStream(false)
+      this.props.setPokemonCard(false)
     }
 
     handleChange = (e) => {

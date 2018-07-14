@@ -125,6 +125,9 @@ pokemon.card.where({ name:Cards})
     console.log(cards[0].name) // "M Sceptile-EX"
     return res.json(cards)
 })
+.catch(function(error){
+  console.log('There was an error ', error);
+});
 })
 
 router.post('/moves',(req,res) => {

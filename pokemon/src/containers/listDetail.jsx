@@ -118,7 +118,7 @@ class ListDetail extends Component{
         />
   </span>
        }
-       if (this.props.card&& this.props.data !== 'loading'){
+       if (this.props.card && this.props.data !== 'loading'){
            const Cards = this.props.card.map((cardz,index) => {
                return(
                 <img src ={cardz.imageUrl} alt ="" />
@@ -131,9 +131,7 @@ class ListDetail extends Component{
             {Cards}
         </div>
            </span>
-     
-
-    }
+     }
        
        if (this.props.nature && this.props.data !== 'loading'){
            console.log(this.props.nature)
