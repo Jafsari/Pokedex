@@ -4,16 +4,17 @@ import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Modal from '@material-ui/core/Modal';
 import Button from '@material-ui/core/Button';
-import '../styles/modal.css'
+import '../styles/modal.css';
+
 
 function rand() {
   return Math.round(Math.random() * 20) - 10;
 }
 
 function getModalStyle() {
-  const top = 50 + rand();
-  const left = 50 + rand();
-
+  const top = 47;
+  const left = 50;
+console.log(left)
   return {
     top: `${top}%`,
     left: `${left}%`,
@@ -46,10 +47,14 @@ class SimpleModal extends React.Component {
 
   render() {
     const { classes } = this.props;
-
+    // const Button = ( this.props.authenticated ? (
+    //    <Button> Login</Button>
+    //   ) : (
+    //     <Button> Logout </Button>
+    //   ));
     return (
       <div>
-        <Button className="MuiButton-root-79" onClick={this.handleOpen}>About</Button>
+        <Button className="MuiButton-root-79" onClick={this.handleOpen}>{this.props.name}</Button>
         <Modal
           aria-labelledby="simple-modal-title"
           aria-describedby="simple-modal-description"
@@ -58,10 +63,11 @@ class SimpleModal extends React.Component {
         >
           <div style={getModalStyle()} className={classes.paper}>
             <Typography variant="title" id="modal-title">
-              Pokedex
+              {this.props.Title}
             </Typography>
+        {this.props.component}
             <Typography variant="subheading" id="simple-modal-description">
-              Welcome to the Pokedex! This is an application, that allows you to search for all the information in the Pokemon Universe and watch Twitch Streams!
+              {this.props.description}
             </Typography>
           </div>
         </Modal>

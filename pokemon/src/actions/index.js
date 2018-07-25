@@ -307,18 +307,6 @@ return{
 
 /* CARDS */
 export function cards(data){
-    // let BASE_URL = 'http://localhost:9000/api/pokemon/cards'
-    // return dispatch => {
-    //  dispatch(setPokemonLoading('loading'))
-    // return axios.post(BASE_URL,data).then(res => {
-    //   const information = res.data;
-    //   dispatch(setPokemonCard(information))
-    //   dispatch(setPokemonLoading('Finished'))
-    //  }).catch(e => {
-    //   console.log(e)
-    //   return dispatch(setPokemonCardsFail('Done'))
-    //  })
-    // }
     let BASE_URL = 'http://localhost:9000/api/pokemon/cards'
     return dispatch => {
     dispatch(setPokemonLoading('loading'))

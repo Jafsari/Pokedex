@@ -154,6 +154,7 @@ class TextFields extends React.Component {
           id="Search"
           value={this.state.Search} 
            />
+           {this.props.secondText}
            <span>
             <Icon icon={ic_search} />
             </span>

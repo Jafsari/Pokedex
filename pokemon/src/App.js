@@ -14,7 +14,7 @@ import Natures from './components/natures.jsx';
 import Moves from './components/moves.jsx';
 import Streams from './components/stream.jsx';
 import Cards from './components/cards.jsx';
-
+import LoginLanding from './components/Login-Landing.jsx';
 
 
 class App extends Component {
@@ -24,6 +24,7 @@ class App extends Component {
       <div className='container'>
       <div className="walllpaper">
         <Switch>
+        <Route exact path='/login' component={LoginLanding} />
         <Route exact path='/' component={Landing} />
         <Route exact path="/berries" component={Berries} />
         <Route exact path="/evolutions" component={Evolutions} />

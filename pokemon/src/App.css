@@ -35,9 +35,30 @@
     background-position:center;
 }
 
+.landing{
+  background-image: url(assets/wallpapers/pokemon-sign-up.jpg);
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* height:100vh;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; */
+
+}
+
 @media screen and (max-height: 480px) {
   .wallpaper {
     background-image: none;
   }
 }
+
+/* @media all and (max-width: 400px) {
+  .landing {
+    max-width: 100%;
+    height: auto;
+  }
+} */
 

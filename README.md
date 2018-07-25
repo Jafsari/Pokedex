@@ -1,13 +1,21 @@
 # Pokedex
 
 
-This App is an app that's focused on creating a real life pokedex, that's efficient on both web and mobile platforms.
+> This is an application that allows clients to look up various types of information on pokemon and cards.
 
-Built with ReactJS,Redux,Node,Express,Pokemon API, Pokemon-Stadium API
+## Technologies
+- React.js
+- Redux
+- Node.js/Express
+- Pokemon API
+- TCG API
+- Pokemon-Stadium API
 
-Demo: https://desolate-gorge-40418.herokuapp.com/
-
-Try it out on Mobile or Web :)
+## How to Get Started
+> Link: https://desolate-gorge-40418.herokuapp.com/
+  - Enter different information based on placholders.
+  - Press enter to view the results.
+  - Switch through the different components to view different parts of the Pokedex.
 
 
 Desktop:
