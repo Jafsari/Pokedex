@@ -18,6 +18,12 @@
     color:white;
 }
 
+.flex{
+    display: flex;
+    position: relative;
+    min-height: 56px;
+    align-items: center;
+}
 
 @media screen and (max-width:600px){
     .responsive sub {

@@ -13,4 +13,9 @@
     -ms-animation:pop-in 1.5s; 
 }
 
+.button:hover { 
+    cursor:pointer;
+    transform: scale(1.1); 
+  }
+
 

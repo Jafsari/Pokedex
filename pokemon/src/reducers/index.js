@@ -12,6 +12,7 @@ import stream from './streamReducer.js';
 import card from './cardReducer.js';
 import authentication from './authenticatedReducer.js'
 export default combineReducers({
+authentication,
 search,
 power,
 berries,

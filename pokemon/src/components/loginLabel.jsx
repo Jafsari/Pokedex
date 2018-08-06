@@ -51,7 +51,7 @@ const styles = theme => ({
      handleRequest = (e) => {
           console.log('hi')
         e.preventDefault();
-        this.props.signup(this.state).then(() => {
+        this.props.login(this.state).then(() => {
 
         })
       }

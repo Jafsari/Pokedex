@@ -11,6 +11,9 @@ import Drawer from './drawer.jsx'
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import Modal from './modal.jsx'
 import LoginLabel from '../components/loginLabel.jsx';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 
 const styles = {
   root: {
@@ -41,12 +44,53 @@ class ButtonAppBar extends React.Component {
   handleDrawerClose = () => {
     this.setState({ drawerIsOpen: false });
   };
-
-
-  render() {
+  handleLogout = (e) => {
+    e.preventDefault();
+    this.props.logout()
+  }
+  render() {    
     const { classes } = this.props;
-  return (
-    <div className={classes.root}>
+    const navBar = (this.props.auth.isAuthenticated ? (
+      <div> 
+              <AppBar color="secondary" position="static">
+        <Toolbar>
+        <IconButton onClick={this.handleDrawerOpen} className={classes.menuButton} color="inherit" aria-label="Menu">
+        <Drawer
+          variant="persistent"
+          classes={{
+            paper: classes.drawerPaper,
+          }}
+          open={this.state.drawerIsOpen}
+        >
+          <div className={classes.drawerHeader}>
+            <IconButton onClick={this.handleDrawerClose}>
+              <ChevronLeftIcon />
+            </IconButton>
+          </div>
+          <div className={classes.drawerInner}>
+          </div>
+        </Drawer>
+            </IconButton>
+          <Button href="/" variant="title" color="inherit" className={classes.flex}>
+            Pokedex
+          </Button>
+          <Button  className='font' name='Logout' onClick={this.handleLogout}>
+          {`Welcome ${this.props.auth.user}`}
+          </Button>
+          <Button  className='font' name='Logout' onClick={this.handleLogout}>
+          Logout
+          </Button>
+          <Modal className='font'
+          name='About'
+          Title='Pokedex'
+          description= 'Welcome to the Pokedex! This is an application, that allows you to search for all the information in the Pokemon Universe and watch Twitch Streams!'
+          />
+        </Toolbar>
+      </AppBar>
+      </div>
+    ) : (
+
+      <div className={classes.root}>
       <AppBar color="secondary" position="static">
         <Toolbar>
         <IconButton onClick={this.handleDrawerOpen} className={classes.menuButton} color="inherit" aria-label="Menu">
@@ -85,17 +129,31 @@ class ButtonAppBar extends React.Component {
         </Toolbar>
       </AppBar>
     </div>
+    ));
+  return (
+    <div className={classes.root}>
+    {navBar}
+    </div>
   );
 }
 }
 
 function ButtonAppBar(props) {
   const { classes } = props;
-  
 }
 
+const mapStateToProps = (state) => { 
+  return { 
+    auth: state.authentication
+  }
+}
 
-export default withStyles(styles)(ButtonAppBar);
+export default compose(
+withStyles(styles),
+connect(mapStateToProps,actions)
+)
+(ButtonAppBar)
+
 
 // import React from 'react';
 // import PropTypes from 'prop-types';

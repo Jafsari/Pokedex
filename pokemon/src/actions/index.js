@@ -461,7 +461,7 @@ export function signup(data){
 
   export function login(data,second) {
     let BASE_URL = 'http://localhost:9000/api/auth/login'
-    console.log(data)
+    console.log(data.username)
     return dispatch => {
       return axios.post(`${BASE_URL}`, data).then(res => {
         const token = JSON.stringify(res.data.token);
@@ -469,8 +469,16 @@ export function signup(data){
         console.log(decode)
         localStorage.setItem('jwtToken', token);
         setAuthorizationToken(token);
-        dispatch(setCurrentUser(second));
+        dispatch(setCurrentUser(data.username));
       });
+    }
+  }
+
+  export function logout() {
+    return dispatch => {
+      localStorage.removeItem('jwtToken');
+      setAuthorizationToken(false);
+      dispatch(setCurrentUser({}));
     }
   }
 
