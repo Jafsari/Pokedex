@@ -74,7 +74,7 @@ class ButtonAppBar extends React.Component {
           <Button href="/" variant="title" color="inherit" className={classes.flex}>
             Pokedex
           </Button>
-          <Button  className='font' name='Logout' onClick={this.handleLogout}>
+          <Button  className='font'>
           {`Welcome ${this.props.auth.user}`}
           </Button>
           <Button  className='font' name='Logout' onClick={this.handleLogout}>

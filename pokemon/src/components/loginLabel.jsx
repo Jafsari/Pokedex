@@ -49,11 +49,12 @@ const styles = theme => ({
 
 
      handleRequest = (e) => {
-          console.log('hi')
         e.preventDefault();
-        this.props.login(this.state).then(() => {
-
-        })
+        if (this.props.name){
+        this.props.login(this.state)
+        } else {
+        this.props.signup(this.state)
+        }
       }
   render() {
     const Button = ( this.props.name ? (

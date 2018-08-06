@@ -453,6 +453,8 @@ export function signup(data){
     const token = JSON.stringify(res.data.token);
     console.log(token);
     localStorage.setItem('jwtToken', token);
+    setAuthorizationToken(token);
+    dispatch(setCurrentUser(data.username));
      }).catch(e => {
       console.log(e)
      })
