@@ -450,10 +450,11 @@ export function signup(data){
     let BASE_URL = 'http://localhost:9000/api/auth/signup'
     return dispatch => {
     return axios.post(BASE_URL,data).then(res => {
-      const information = res.data;
+    const token = JSON.stringify(res.data.token);
+    console.log(token);
+    localStorage.setItem('jwtToken', token);
      }).catch(e => {
       console.log(e)
-      return dispatch(setlocationsFail('Fail'))
      })
     }
   }

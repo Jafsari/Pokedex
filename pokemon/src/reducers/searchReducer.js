@@ -3,7 +3,7 @@ import { SET_POKEMON, SET_POKEMON_LOADING, SET_POKEMON_FAIL, SET_ABILITY, SET_AB
 const DEFAULT_STATE = {
     pokemon:false,
     data:false,
-    ability:false
+    ability:false,
   };
 
 export default (state = DEFAULT_STATE, action) => {

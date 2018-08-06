@@ -34,10 +34,16 @@ const styles = theme => ({
       constructor(props){
           super(props)
           this.state = {
-                Username:"",
-                Password:""
+                username:"",
+                password:""
           }
       }
+
+      handleChange = (e) => {
+        this.setState({
+             [e.target.name]: e.target.value
+           });
+     }
 
      handleRequest = (e) => {
           console.log('hi')
@@ -56,7 +62,7 @@ const styles = theme => ({
       <form className={classes.container} noValidate autoComplete="off" onSubmit={this.handleRequest}>
         <TextField
           id="full-width"
-          label="Username"
+          label="username"
           InputLabelProps={{
             shrink: true,
           }}
@@ -64,14 +70,14 @@ const styles = theme => ({
           fullWidth
           margin="normal"
           onChange={this.handleChange}
-          name="Username"
+          name="username"
           type="text"
-          id="Username"
+          id="username"
           value={this.state.Search} 
            />
             <TextField
           id="full-width"
-          label="Password"
+          label="password"
           InputLabelProps={{
             shrink: true,
           }}
@@ -79,9 +85,9 @@ const styles = theme => ({
           fullWidth
           margin="normal"
           onChange={this.handleChange}
-          name="Password"
+          name="password"
           type="password"
-          id="Password"
+          id="password"
           value={this.state.Search} 
            />
            {this.props.secondText}

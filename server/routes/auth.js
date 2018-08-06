@@ -7,18 +7,13 @@ const schema = require('../joi-schema/auth-schema');
 
 
 
-router.post('/signup', function(req,res){
+router.post('/signup', (req,res) => {
     console.log(req.body)
-    const valid = schema.validate(req.body)
-    if (valid.error) {
-      return res.status(400).json('Error in validation')
-    }
-    req.parsed = valid.value
-
     return User.create(req.body).then(function(response){
-        var token = jwt.sign({ user_id: response.id}, SECRET);
+        var token = jwt.sign({ user_id: response.id}, SECRET.SECRET);
         res.status(200).send({token})
     }).catch(function(err){
+        console.log(err)
         res.status(400).send(err.message)
     })
 });
