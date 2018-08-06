@@ -12,6 +12,7 @@ import {ic_search} from 'react-icons-kit/md/ic_search';
 import { APIRequest } from '../helper'
 import Button from '@material-ui/core/Button';
 import '../styles/login.css';
+import '../styles/loginLabel.css';
 
 
 const styles = theme => ({
@@ -45,10 +46,14 @@ const styles = theme => ({
            });
      }
 
+
+
      handleRequest = (e) => {
           console.log('hi')
         e.preventDefault();
-        this.props.signup(this.state)
+        this.props.signup(this.state).then(() => {
+
+        })
       }
   render() {
     const Button = ( this.props.name ? (
@@ -60,7 +65,7 @@ const styles = theme => ({
     return (
       <div>
       <form className={classes.container} noValidate autoComplete="off" onSubmit={this.handleRequest}>
-        <TextField
+        <TextField className='transition'
           id="full-width"
           label="username"
           InputLabelProps={{
@@ -75,7 +80,7 @@ const styles = theme => ({
           id="username"
           value={this.state.Search} 
            />
-            <TextField
+            <TextField className='transition'
           id="full-width"
           label="password"
           InputLabelProps={{

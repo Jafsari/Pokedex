@@ -17,6 +17,8 @@
 #NavColor{
     color:white;
 }
+
+
 @media screen and (max-width:600px){
     .responsive sub {
         font-size: 5px;

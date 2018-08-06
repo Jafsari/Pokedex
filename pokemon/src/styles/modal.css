@@ -2,6 +2,14 @@
     color:white!important;
 }
 
+.transition{
+    transition: all .2s ease-in-out;
+    -webkit-animation:pop-in 1.5s;
+    -moz-animation:pop-in 1.5s;
+    -ms-animation:pop-in 1.5s; 
+}
+
+
 @media screen and (max-width:600px){
     .MuiButton-root-79 {
         font-size: 0.600rem!important;

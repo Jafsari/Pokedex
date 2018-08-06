@@ -71,7 +71,7 @@ class ButtonAppBar extends React.Component {
           </Button>
           <Modal  className='font' name='Login'
           Title='Login' 
-          component= {<LoginLabel name = {true}/>}
+          component= {<LoginLabel name = {true} />}
           />
           <Modal className='font' name='Signup'
           Title='Signup' 

@@ -58,12 +58,14 @@ class SimpleModal extends React.Component {
           onClose={this.handleClose}
         >
           <div style={getModalStyle()} className={classes.paper}>
-            <Typography variant="title" id="modal-title">
+            <Typography variant="title" id="modal-title" className='transition'>
               {this.props.Title}
             </Typography>
         {this.props.component}
             <Typography variant="subheading" id="simple-modal-description">
+            <span className="transition">
               {this.props.description}
+            </span>
             </Typography>
           </div>
         </Modal>

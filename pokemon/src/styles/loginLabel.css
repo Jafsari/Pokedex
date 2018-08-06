@@ -1,0 +1,6 @@
+.transition{
+    transition: all .2s ease-in-out;
+    -webkit-animation:pop-in 1.5s;
+    -moz-animation:pop-in 1.5s;
+    -ms-animation:pop-in 1.5s; 
+}
