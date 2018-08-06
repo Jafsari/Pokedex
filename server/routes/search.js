@@ -110,16 +110,6 @@ router.post('/items',(req,res) => {
 router.post('/cards',(req,res) => {
   console.log(req.body)
   const Cards = req.body.Cards.replace(/\s/g, '')
-  // pokemon.card.find('base1-4')
-  // .then(result => {
-  //     console.log(result.card.name) // "Charizard"
-  //     return res.json(result)
-  // })
-//   pokemon.card.where({ name:Cards, page: 10 })
-// .on('data', card => {
-//     console.log(card.name)
-//     return res.json(card)
-// })
 pokemon.card.where({ name:Cards})
 .then(cards => {
     console.log(cards[0].name) // "M Sceptile-EX"

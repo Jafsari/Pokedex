@@ -1,5 +1,5 @@
 var jwt = require("jsonwebtoken")
-var SECRET = 'woo'
+var SECRET = require('../config.js')
 
 exports.loginRequired =function(req,res,next){
     try {

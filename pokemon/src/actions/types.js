@@ -60,3 +60,8 @@ export const SET_LOCATIONS_LOADING ="LOCATIONS_LOADING"
 /* STREAM */
 
 export const SET_STREAM ="SET_STREAM"
+
+
+/* AUTHENTICATION */
+export const SET_USER = "SET_USER"
+export const SET_CURRENT_USER = "SET_CURRENT_USER"

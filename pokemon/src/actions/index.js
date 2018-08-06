@@ -10,10 +10,10 @@ import {
     SET_GAMES_FAIL, SET_GAMES, SET_GAMES_LOADING, // Games
     SET_LOCATIONS_FAIL, SET_LOCATIONS, SET_LOCATIONS_LOADING, // Locations
     SET_STREAM , //Streams
-    SET_CARDS, SET_CARDS_FAIL, SET_CARDS_LOADING // Cards  
+    SET_CARDS, SET_CARDS_FAIL, SET_CARDS_LOADING, // Cards  
+    SET_USER, SET_CURRENT_USER //Authentication
  } from './types.js'
-
-
+ import jwtDecode from 'jwt-decode';
 
 
 /*        HELPER       */
@@ -30,6 +30,14 @@ const reduxAPIRequest = (data,route,action1,action2) => {
      })
     }
 }
+
+export function setAuthorizationToken(token) {
+    if (token) {
+      axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+    } else {
+      delete axios.defaults.headers.common['Authorization'];
+    }
+  }
 
 
 const reset = () => {
@@ -435,6 +443,41 @@ export function setStream(information){
         information
 }
 }
+
+/* AUTHENTICATION */
+
+export function signup(data){
+    let BASE_URL = 'http://localhost:9000/api/auth/signup'
+    return dispatch => {
+    return axios.post(BASE_URL,data).then(res => {
+      const information = res.data;
+     }).catch(e => {
+      console.log(e)
+      return dispatch(setlocationsFail('Fail'))
+     })
+    }
+  }
+
+  export function login(data,second) {
+    let BASE_URL = 'http://localhost:9000/api/auth/login'
+    return dispatch => {
+      return axios.post(`${BASE_URL}`, data).then(res => {
+        const token = JSON.stringify(res.data.token);
+        const decode = jwtDecode(token)
+        console.log(decode)
+        localStorage.setItem('jwtToken', token);
+        setAuthorizationToken(token);
+      });
+    }
+  }
+
+  export function setCurrentUser(user) {
+    return {
+      type: SET_CURRENT_USER,
+      user
+    };
+  }
+
 
 
 

@@ -10,7 +10,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Drawer from './drawer.jsx'
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import Modal from './modal.jsx'
-import LoginLabel from './loginLabel.jsx';
+import LoginLabel from '../components/loginLabel.jsx';
 
 const styles = {
   root: {
@@ -69,16 +69,19 @@ class ButtonAppBar extends React.Component {
           <Button href="/" variant="title" color="inherit" className={classes.flex}>
             Pokedex
           </Button>
-          <Modal name='Login'
+          <Modal  className='font' name='Login'
           Title='Login' 
-          component= {<LoginLabel/>}
-
+          component= {<LoginLabel name = {true}/>}
           />
-          <Modal 
+          <Modal className='font' name='Signup'
+          Title='Signup' 
+          component= {<LoginLabel name={false}/>}
+          />
+          <Modal className='font'
           name='About'
           Title='Pokedex'
           description= 'Welcome to the Pokedex! This is an application, that allows you to search for all the information in the Pokemon Universe and watch Twitch Streams!'
-      />
+          />
         </Toolbar>
       </AppBar>
     </div>

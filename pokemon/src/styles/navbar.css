@@ -10,7 +10,17 @@
     color:white;
 }
 
+.font{
+    size:5px !important;
+}
+
 #NavColor{
     color:white;
 }
+@media screen and (max-width:600px){
+    .responsive sub {
+        font-size: 5px;
+    }
+  }
+  
 

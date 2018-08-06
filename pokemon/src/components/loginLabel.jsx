@@ -39,7 +39,17 @@ const styles = theme => ({
           }
       }
 
-  render() {      
+     handleRequest = (e) => {
+          console.log('hi')
+        e.preventDefault();
+        this.props.signup(this.state)
+      }
+  render() {
+    const Button = ( this.props.name ? (
+       <button className='button'> Login </button>
+      ) : (
+        <button onClick={this.handleSignUp} className='button'> Signup </button>
+      ));
     const { classes } = this.props;
     return (
       <div>
@@ -70,13 +80,13 @@ const styles = theme => ({
           margin="normal"
           onChange={this.handleChange}
           name="Password"
-          type="text"
+          type="password"
           id="Password"
           value={this.state.Search} 
            />
            {this.props.secondText}
            <span>
-               <button className='button'> Submit </button>
+               {Button}
             </span>
       </form> 
       </div>
@@ -88,4 +98,15 @@ TextFields.propTypes = {
     classes: PropTypes.object.isRequired,
   };
 
-  export default withStyles(styles)(TextFields);
+
+  export default compose(
+   withStyles(styles),
+   connect(null,actions)
+  )
+  (TextFields)
+
+//   export default compose(
+//     withStyles(styles),
+//     connect(mapStateToProps,actions)
+// )
+// (TextFields);

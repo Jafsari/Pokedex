@@ -3,6 +3,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const pokemonRoutes = require('./routes/search');
+const authRoutes = require('./routes/auth')
 
 const app = express();
 
@@ -12,6 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 app.use("/api/pokemon",pokemonRoutes);
+app.use("/api/auth",authRoutes)
 
 app.use((req,res,next) => {
     const err = new Error("Not Found");

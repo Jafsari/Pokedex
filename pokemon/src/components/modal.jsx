@@ -41,17 +41,13 @@ class SimpleModal extends React.Component {
     this.setState({ open: true });
   };
 
-  handleClose = () => {
+  handleClose = (e) => {
+    e.preventDefault();
     this.setState({ open: false });
   };
 
   render() {
     const { classes } = this.props;
-    // const Button = ( this.props.authenticated ? (
-    //    <Button> Login</Button>
-    //   ) : (
-    //     <Button> Logout </Button>
-    //   ));
     return (
       <div>
         <Button className="MuiButton-root-79" onClick={this.handleOpen}>{this.props.name}</Button>
