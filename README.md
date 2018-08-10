@@ -7,9 +7,12 @@
 - React.js
 - Redux
 - Node.js/Express
+- Mongoose
+- MongoDB
 - Pokemon API
 - TCG API
 - Pokemon-Stadium API
+
 
 ## How to Get Started
 > Link: https://desolate-gorge-40418.herokuapp.com/
