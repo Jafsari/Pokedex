@@ -121,11 +121,11 @@ class ButtonAppBar extends React.Component {
           Title='Signup' 
           component= {<LoginLabel name={false}/>}
           />
-          <Modal className='font'
+          {/* <Modal className='font'
           name='About'
           Title='Pokedex'
           description= 'Welcome to the Pokedex! This is an application, that allows you to search for all the information in the Pokemon Universe and watch Twitch Streams!'
-          />
+          /> */}
         </Toolbar>
       </AppBar>
     </div>
