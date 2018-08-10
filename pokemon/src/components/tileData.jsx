@@ -28,6 +28,7 @@ import {ic_donut_small} from 'react-icons-kit/md/ic_donut_small';
 import '../styles/tileData.css';
 import {twitch} from 'react-icons-kit/icomoon/twitch';
 import {basic_cards_diamonds} from 'react-icons-kit/linea/basic_cards_diamonds';
+import {search} from 'react-icons-kit/fa/search';
 
 
 export const mailFolderListItems = (
@@ -92,6 +93,12 @@ export const otherMailFolderListItems = (
       <Icon icon={twitch} />
       </ListItemIcon>
       <ListItemText primary='Twitch' />
+    </ListItem>
+    <ListItem button component={Link} to="/">
+      <ListItemIcon>
+      <Icon icon={search} />
+      </ListItemIcon>
+      <ListItemText primary="Pokemon" />
     </ListItem>
     
   </div>
